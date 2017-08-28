@@ -4,4 +4,5 @@ Semester long team folder for CS3250
 <ol>
 <li>Visit Project's tab for what to do in current Sprint
 <li>Edit Team log for tracking purposes
+<li>Review Link file to set up your environment
 </ol>
