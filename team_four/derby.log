@@ -1,11 +1,16 @@
 ----------------------------------------------------------------
-Tue Sep 12 23:53:24 MDT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015e-79cc-9456-00000b4409b8 
-on database directory memory:C:\Users\John\Desktop\CS3250\team_four\testdb with class loader sun.misc.Launcher$AppClassLoader@764c12b6 
-Loaded from file:/C:/Users/John/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_144-b01
-user.dir=C:\Users\John\Desktop\CS3250\team_four
+Sat Sep 16 00:54:02 MDT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015e-8977-2de3-0000003e9100 
+on database directory memory:C:\Users\Nick\Downloads\CS3250-master\team_four\testdb with class loader sun.misc.Launcher$AppClassLoader@2d2eb338 
+Loaded from file:/C:/Users/Nick/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
+java.vendor=IBM Corporation
+java.runtime.version=pwa6480sr2fp10-20160108_01 (SR2 FP10)
+java.fullversion=JRE 1.8.0 IBM J9 2.8 Windows 10 amd64-64 Compressed References 20160106_284759 (JIT enabled, AOT enabled)
+J9VM - R28_20160106_1341_B284759
+JIT  - tr.r14.java_20151209_107110.02
+GC   - R28_20160106_1341_B284759_CMPRSS
+J9CL - 20160106_284759
+user.dir=C:\Users\Nick\Downloads\CS3250-master\team_four
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
