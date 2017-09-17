@@ -38,28 +38,45 @@ public class UserTest {
 	}
 	//Tests for User Class
 	@Test
-	public void userName() {
-		System.out.println(testerA.getName());
+	//Tests the username fetch method and is supposed to fail.
+	public void userNameFail() {
+		assertNotEquals("Result", "Steve", testerA.getName());
 		
 	}
 	@Test
+	//Tests the username fetch method
+	public void userNamePass() {
+		assertEquals("Result", "Bruce", testerA.getName());
+		
+	}
+	@Test
+	//Tests the username change method
 	public void changeUserName() {
 		tester.setName("Frank");
-		System.out.println(tester.getName());
+		assertEquals("Result","Frank",tester.getName());
 	}
 	@Test
+	//tests the username change method and is supposed to fail
+	public void changeUserNameFail() {
+		tester.setName("Steve");
+		assertNotEquals("Result","Frank",tester.getName());
+	}
+	@Test
+	//Testing fetch id
 	public void idTest() {
-		System.out.println( tester.getId());
+		assertEquals("Result", "12345", tester.getId());
 	}
 	@Test
+	//testing change id
 	public void changeIdTest() {
 		tester.setId("67890");
-		System.out.println( tester.getId());
+		assertEquals("Result","67890", tester.getId());
 	}
 	//Service Tests
 	@Test
 	public void addUserTest() {
-		//Cannot add to the User Service List due to the Arrays.asList(); producing a fixed array
+		//Cannot add to the User Service List due to the Arrays.asList(); producing a fixed array. Needs to be fixed
+		//Or we will only ever have three users using the product.
 		/**tester3.addUser(tester);
 		tester3.addUser(testerA);
 		tester3.addUser(testerB);
@@ -69,17 +86,20 @@ public class UserTest {
 	@Test	
 	public void updateUserTest(){
 		tester3.updateUser("12345",testerA);
-		System.out.println( tester3.getAllUsers());
+		assertEquals("Result", "testerA", tester3.getUser("ID1"));
 	}
-	@Test
-	public void deleteUserTest(){
-		tester3.deleteUser("900689234");
-		System.out.println(tester3.getAllUsers());
+	/**@Test
+	//Array does not allow deletion of users.
+		public void deleteUserTest(){
+		tester3.deleteUser("ID2");
+		assertEquals("Result", null,tester3.getUser("ID2"));
 		
-	}
+	}*/
 	@Test
+	//This test is returning the user's location instead of the user name.
 	public void getUserTest() {
-		System.out.println(tester3.getUser("ID3"));
+		assertEquals("Result","Student3",tester3.getUser("ID3"));
 	}
 
 }
+
