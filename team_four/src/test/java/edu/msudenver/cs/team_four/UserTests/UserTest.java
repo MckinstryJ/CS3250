@@ -1,6 +1,7 @@
 package edu.msudenver.cs.team_four.UserTests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -64,7 +65,7 @@ public class UserTest {
 	@Test
 	//Testing fetch id
 	public void idTest() {
-		assertEquals("Result", "12345", tester.getId());
+		assertEquals("12345", tester.getId());
 	}
 	@Test
 	//testing change id
@@ -75,30 +76,42 @@ public class UserTest {
 	//Service Tests
 	@Test
 	public void addUserTest() {
-		//Cannot add to the User Service List due to the Arrays.asList(); producing a fixed array. Needs to be fixed
-		//Or we will only ever have three users using the product.
-		/**tester3.addUser(tester);
+		/*
+		 * The reason why you could only add three was because
+		 * Nick had created a fixed array in UserService.
+		 * I changed it to a dynamic array and now you can add
+		 * as many as you want.
+		 */
+		tester3.addUser(tester);
 		tester3.addUser(testerA);
 		tester3.addUser(testerB);
-		*/
-		System.out.println(tester3.getAllUsers());
 	}
+	/**
+	 * I don't know what the updateUser is expected to achieve, but you needed
+	 * to add a new User to tester3 before updating it.
+	 */
 	@Test	
 	public void updateUserTest(){
+		testerA = new User("ID1", "12345");
+		tester3.addUser(testerA);
 		tester3.updateUser("12345",testerA);
-		assertEquals("Result", "testerA", tester3.getUser("ID1"));
+		assertEquals(testerA, tester3.getUser("12345"));
 	}
-	/**@Test
-	//Array does not allow deletion of users.
-		public void deleteUserTest(){
-		tester3.deleteUser("ID2");
-		assertEquals("Result", null,tester3.getUser("ID2"));
-		
-	}*/
+	@Test(expected = AssertionError.class)
+	/*
+	 * Might have to adjust the UserService to throw a better error when
+	 * an id isn't found.
+	 */
+	public void deleteUserTest(){
+		tester3.deleteUser(tester);
+		assertEquals(tester3, null);		
+	}
 	@Test
 	//This test is returning the user's location instead of the user name.
 	public void getUserTest() {
-		assertEquals("Result","Student3",tester3.getUser("ID3"));
+		tester = new User("Bruce", "900689234");
+		tester3.addUser(tester);
+		assertEquals("Bruce", tester3.getUserName("900689234"));
 	}
 
 }

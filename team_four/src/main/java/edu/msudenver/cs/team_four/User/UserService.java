@@ -7,18 +7,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-	private List<User> users= Arrays.asList(
-			new User("Student1", "ID1"),
-			new User("Student2", "ID2"),
-			new User("Student3", "ID3")
-			);
-	
+	private List<User> users = new ArrayList<User>();
+			
 	public List<User> getAllUsers() {
 		return users;
 	}
 	
 	public User getUser(String id) {
 		return users.stream().filter(u -> u.getId().equals(id)).findFirst().get();
+	}
+	
+	public String getUserName(String id) {
+		return users.stream().filter(u -> u.getId().equals(id)).findFirst().get().getName();
 	}
 	
 	public void addUser(User user) {
@@ -35,7 +35,7 @@ public class UserService {
 		}
 	}
 	
-	public void deleteUser(String id) {
-		users.removeIf(u -> u.getId().equals(id));
+	public void deleteUser(User user) {
+		users.remove(user);
 	}
 }
