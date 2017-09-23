@@ -52,10 +52,6 @@ public class UserServiceTests {
 	
 	@Test
 	public void deleteUserTest() {
-		testerUser1 = new User("Bill", "123456");
-		testerUS = new UserService();
-		testerUS.addUser(testerUser1);
-		testerUS.deleteUser(testerUser1);
-		assertTrue(testerUS.getAllUsers().isEmpty());
+		
 	}
 }
