@@ -2,7 +2,7 @@
 Semester long team folder for CS3250
 
 <ol>
-<li>Visit Project's tab for what to do in current Sprint
-<li>Edit Team log for tracking purposes
-<li>Review Link file to set up your environment
+<li>Travis CI and Code Climate was added to the github enviro.
+<li>This is a test for code climate... if there is any issues let me know.
+<li>It will be a work in progress but something that should help us.
 </ol>
