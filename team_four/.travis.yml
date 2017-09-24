@@ -1,4 +1,4 @@
-before_script: cd team_four
+before_install: cd team_four
 language: java
 sudo: false
 script: mvn clean verify
