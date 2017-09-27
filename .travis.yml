@@ -1,18 +1,9 @@
 before_install: cd team_four
-env:
-  global:
-    - CC_TEST_REPORTER_ID=787a2f89b15c637323c7340d65ec17e898ac44480706b4b4122ea040c2a88f1d
 language: java
-jdk:
-- oraclejdk8
-install:
-- mvn -N io.takari:maven:wrapper
-- ./mvnw install -DskipTests=false -Dmaven.javadoc.skip=false -B -V
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-script:
-  - bundle exec rspec
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+sudo: false # faster builds
+before_install:
+ - chmod +x ./gradlew
+ - jdk_switcher use oraclejdk8
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
