@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Rerun CoursesTest (Failed Tests first)" project="team_four" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="edu.msudenver.cs.team_four.CoursesTest" time="0.0">
+    <testcase name="getCourseInfoTest" classname="edu.msudenver.cs.team_four.CoursesTest" time="0.0"/>
+    <testcase name="courseSetUpTest" classname="edu.msudenver.cs.team_four.CoursesTest" time="0.0"/>
+  </testsuite>
+</testrun>

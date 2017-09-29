@@ -1,0 +1,32 @@
+package edu.msudenver.cs.team_four;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import edu.msudenver.cs.team_four.User.Courses;
+
+public class CoursesTest {
+
+	@Test
+	public void courseSetUpTest() {
+		Courses course = new Courses("","",000,0,"","","","");
+	}
+	
+	@Test
+	public void getCourseInfoTest() {
+		Courses course = new Courses("Defense Against the Dark Arts 101",
+									"Defense", 535, 3, "Protection Spells",
+									"Be able to protect yourself against Tom Riddle",
+									"Tom Riddle 101", "Tom Ridde 201");
+		assertEquals("Defense Against the Dark Arts 101", course.getCourseName());
+		assertEquals("Defense", course.getDepartment());
+		assertEquals(535, course.getCRN());
+		assertEquals(3, course.getCredits());
+		assertEquals("Protection Spells", course.getDescription());
+		assertEquals("Be able to protect yourself against Tom Riddle", course.getLearningObj());
+		assertEquals("Tom Riddle 101", course.getPrereqs());
+		assertEquals("Tom Riddle 202", course.getCoreq());
+	}
+
+}

@@ -39,6 +39,11 @@ public class UserTest {
 	}
 	//Tests for User Class
 	@Test
+	public void userConstructorTest() {
+		tester = new User();
+	}
+	
+	@Test
 	//Tests the username fetch method and is supposed to fail.
 	public void userNameFail() {
 		assertNotEquals("Result", testerA.getName());

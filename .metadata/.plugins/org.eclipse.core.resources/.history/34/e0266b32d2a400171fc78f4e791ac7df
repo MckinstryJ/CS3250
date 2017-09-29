@@ -1,0 +1,14 @@
+package edu.msudenver.cs.team_four;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class GlobalTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

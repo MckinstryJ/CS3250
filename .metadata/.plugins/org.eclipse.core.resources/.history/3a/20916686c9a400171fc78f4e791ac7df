@@ -1,0 +1,16 @@
+package edu.msudenver.cs.team_four;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import edu.msudenver.cs.team_four.User.CourseList;
+
+public class CourseListTest {
+
+	@Test
+	public void courseListSetUpTest() {
+		CourseList cl = new CourseList();
+	}
+
+}

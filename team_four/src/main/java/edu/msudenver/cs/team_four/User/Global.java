@@ -2,10 +2,9 @@ package edu.msudenver.cs.team_four.User;
 
 public class Global {
 
-	public static String creditHours() {
+	public static String creditHours(int cH) {
 		String response = "";
-		int creditHours = 0;
-		int cH = creditHours;
+		
 		if(0 < cH && cH < 30){
 			response = "Freshman";
 		}
