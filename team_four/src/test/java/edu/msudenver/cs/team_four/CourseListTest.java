@@ -44,7 +44,18 @@ public class CourseListTest {
 				"Points 101", "None");
 		CourseList cl = new CourseList();
 		cl.addCourse(course);
-		cl.removeCourse(0);
+		cl.removeCourse(665);
+	}
+	
+	@Test
+	public void removeNoMatchTest() {
+		Courses course = new Courses("Potions 201", "Dark Arts", 665, 
+				3, "Advanced Potions for Advanced Wizards and Witches", 
+				"Designed to create the potions you need while in extended isolation.", 
+				"Points 101", "None");
+		CourseList cl = new CourseList();
+		cl.addCourse(course);
+		assertEquals("Course not found", cl.removeCourse(660));
 	}
 	
 	/*
@@ -61,6 +72,12 @@ public class CourseListTest {
 		cl.clearCourseList();
 	}
 	
+	@Test
+	public void clearEmptyListTest() {
+		CourseList cl = new CourseList();
+		assertEquals("No elements in list.", cl.clearCourseList());
+	}
+	
 	/*
 	 * Show Course List Test
 	 */
@@ -73,5 +90,11 @@ public class CourseListTest {
 		CourseList cl = new CourseList();
 		cl.addCourse(course);
 		cl.showCourseList();
+	}
+	
+	@Test
+	public void showEmptyTest() {
+		CourseList cl = new CourseList();
+		assertEquals("Course List is empty.", cl.showCourseList());
 	}
 }
