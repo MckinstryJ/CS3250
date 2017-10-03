@@ -1,0 +1,18 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <title>Team Four</title>
+  <link rel="icon" 
+      type="image/png" 
+      href="http://static.tvtropes.org/pmwiki/pub/images/e26124d7ab2e55bad3b6a64df5501242.png">
+</head>
+
+<body>
+  <a href="#">Create</a>
+  <a href="#">Read</a>
+  <a href="#">Update</a>
+  <a href="#">Delete</a>
+  <a href="#">User Doc</a>
+</body>
+</html>

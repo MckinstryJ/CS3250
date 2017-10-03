@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<head>
+
+<title>MSU Denver</title>
+
+</head>
+<body>
+	<ul>
+		<li><a href="/Students">Student</a></li>
+		<li><a href="/Courses">Courses</a></li>
+	</ul>
+</body>
+</html>
