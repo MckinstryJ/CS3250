@@ -1,6 +1,10 @@
 package edu.msudenver.cs.team_four.User;
 
 public class Global {
+	public final static String schoolName = "Metropolitan State University";
+	public static String getSchoolName() {
+		return schoolName;
+	}
 
 	public static String creditHours(int cH) {
 		String response = "";
