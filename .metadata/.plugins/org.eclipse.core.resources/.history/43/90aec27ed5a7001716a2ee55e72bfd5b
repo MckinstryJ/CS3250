@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>MSU Denver</title>
+		<link rel="stylesheet" href="http://roadrunnersathletics.com/services/logo_handler.ashx?image_path=/images/logos/site/site.png&width=200&height=200">
+	</head>
+	<body>
+		<ul>
+			<li><a href="/Students">Student</a></li>
+			<li><a href="/Courses">Courses</a></li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+package edu.msudenver.cs.team_four.User;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.github.mustachejava.Mustache;
+
+@Controller
+public class WelcomeController {
+	
+	@Value("${app.message}")
+	private String message = "Home";
+
+	@Value("${app.title}")
+	private String title = "Home";
+
+	@RequestMapping("/")
+	public ModelAndView home(Map<String, Object> model) {
+		model.put("title", this.title);
+		model.put("message", this.message);
+		return new ModelAndView("index.html", model);
+	}
+
+}
