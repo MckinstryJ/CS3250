@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import edu.msudenver.cs.team_four.User.Student;
-import edu.msudenver.cs.team_four.User.StudentController;
 import edu.msudenver.cs.team_four.User.StudentService;
+import edu.msudenver.cs.team_four.User.Controllers.StudentController;
 
 public class StudentServiceTests {
 	static Student testerStudent1;
