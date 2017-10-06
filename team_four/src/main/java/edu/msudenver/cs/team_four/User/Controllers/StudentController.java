@@ -16,10 +16,18 @@ public class StudentController {
 	
 	@Autowired
 	private StudentService StudentService;
+	
+	private String studentTable = "<table class = \"table table-responsive bg-primary\" style=\"width: 80%; align: center\">"
+			+ "					<tr>"
+			+ "						<th>Student ID #</th>"	
+			+ "						<th>First Name</th>"
+			+ "						<th>Last Name</th>"
+			+ "						<th>Options</th>"
+			+ "					</tr>";
 
 	@RequestMapping("/Students")
 	public String getAllStudents(){
-		return LayoutController.HEADER + StudentService.getAllStudents() + LayoutController.BODY;
+		return LayoutController.HEADER + studentTable + LayoutController.BODY;
 	}
 	
 	@RequestMapping("/Students/{id}")
