@@ -7,8 +7,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import edu.msudenver.cs.team_four.User.*;
-import edu.msudenver.cs.team_four.User.Controllers.StudentController;
+import edu.msudenver.cs.team_four.models.*;
 
 import java.util.*;
 

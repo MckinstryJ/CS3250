@@ -285,7 +285,7 @@ This is going to be a year to remember with so much great content&amp;#8230;&amp
 &lt;p&gt;Full Java 8 and Spring Framework &lt;code&gt;5.0&lt;/code&gt; support;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;New &lt;code&gt;sring-rabbit-junit&lt;/code&gt; artifact with some useful testing utilities including &lt;code&gt;BrokerRunning&lt;/code&gt; JUnit &lt;code&gt;@Rule&lt;/code&gt;;&lt;/p&gt;
+&lt;p&gt;New &lt;code&gt;spring-rabbit-junit&lt;/code&gt; artifact with some useful testing utilities including &lt;code&gt;BrokerRunning&lt;/code&gt; JUnit &lt;code&gt;@Rule&lt;/code&gt;;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;The &lt;code&gt;amqp-client&lt;/code&gt; library of version &lt;code&gt;5.0&lt;/code&gt;;&lt;/p&gt;

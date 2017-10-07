@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import edu.msudenver.cs.team_four.User.Global;
+import edu.msudenver.cs.team_four.models.Global;
 
 public class GlobalTest {
 

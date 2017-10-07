@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Assert;
 import org.junit.Test;
 
-import edu.msudenver.cs.team_four.User.CourseList;
-import edu.msudenver.cs.team_four.User.Courses;
+import edu.msudenver.cs.team_four.models.CourseList;
+import edu.msudenver.cs.team_four.models.Courses;
 
 public class CourseListTest {
 
