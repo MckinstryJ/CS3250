@@ -43,7 +43,7 @@ public class StudentController {
 	public String getStudent(@PathVariable String id) {
 		Student stu = studentService.getStudent(id);
 		
-		String studentForm = "<form name=\"stuInfo\" action=\"stuInfo\" method=\"PUT\" class=\"bg-info\" style=\"width:80%;margin:auto;padding:20px;>"
+		String studentForm = "<form name=\"stuInfo\" action=\"stuInfo\" method=\"PUT\" class=\"bg-info\" style=\"width:80%;margin-left:2%;margin-right:45%;padding:20px;>"
 				+ "			<div class=\"form-group\">" 
 				+ "				<label for=\"studentID\">Student Id:</label>"
 				+ "				<input name=\"id\" type=\"text\" class=\"form-control\" id=\"studentID\" placeholder=\"" 
