@@ -16,7 +16,7 @@ public class StudentController {
 	@Autowired
 	private StudentService studentService;
 	
-	private String studentTable = "<table class = \"table table-responsive bg-primary\" style=\"width: 80%; align: center\">"
+	private String studentTable = LayoutController.TABLE
 			+ "					<tr>"
 			+ "						<th>Student ID #</th>"	
 			+ "						<th>Name</th>"
@@ -34,14 +34,22 @@ public class StudentController {
 		for (Student s : studentService.getAllStudents()) {
 			studentList += "<tr><th>" + s.getId() + "</th>" 
 							+ "<th>" + s.getName() + "</th>"
-							+ "<th>" + "options..." + "</tr>";
+							+ "<th>" + "<a href=\"/Students/" + s.getId() 
+							+ "\">INFO</a></tr>";
 		}
 		return LayoutController.HEADER + studentTable + studentList + LayoutController.BODY;
 	}
 	
 	@RequestMapping("/Students/{id}")
 	public Student getStudent(@PathVariable String id) {
-		return studentService.getStudent(id);
+		Student stu = studentService.getStudent(id);
+		
+		/*
+		 * Show Student's complete info... name, id, courses registered, PRE-req met?
+		 * Offer to update student's name/id or delete student.
+		 */
+		
+		return null;
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/Students")

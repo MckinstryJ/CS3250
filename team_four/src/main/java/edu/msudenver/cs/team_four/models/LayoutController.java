@@ -40,6 +40,9 @@ public class LayoutController {
 			"        	</div>\r\n" + 
 			"    	</div>\r\n" + 
 			"	</nav>";
+	
+	public static String TABLE = "<table class = \"table table-hover table-responsive bg-info\" style=\"width: 80%; align: center\">";
+	
 	public static String BODY = 
 			"	</body>" +
 			"</html>";

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CourseController {
 	
-	private String courseTable = "<table class = \"table table-responsive bg-primary\" style=\"width: 80%; align: center\">"
+	private String courseTable = LayoutController.TABLE 
 			+ "					<tr>"
 			+ "						<th>CRN</th>"	
 			+ "						<th>Name</th>"
