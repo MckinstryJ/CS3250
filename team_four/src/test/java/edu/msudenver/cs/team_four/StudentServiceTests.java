@@ -4,9 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import edu.msudenver.cs.team_four.User.Student;
-import edu.msudenver.cs.team_four.User.StudentService;
-import edu.msudenver.cs.team_four.User.Controllers.StudentController;
+import edu.msudenver.cs.team_four.models.Student;
+import edu.msudenver.cs.team_four.models.StudentController;
+import edu.msudenver.cs.team_four.models.StudentService;
 
 public class StudentServiceTests {
 	static Student testerStudent1;
