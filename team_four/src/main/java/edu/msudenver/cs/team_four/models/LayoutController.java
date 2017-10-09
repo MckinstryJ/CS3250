@@ -35,7 +35,6 @@ public class LayoutController {
 			"					 <li><a href=\"/Students\">Students</a></li>\r\n" + 
 			"               	 <li><a href=\"/Professors\">Professors</a></li>\r\n" + 
 			"               	 <li><a href=\"/Courses\">Courses</a></li>\r\n" + 
-			"               	 <li><a href=\"/Sections\">Sections</a></li>\r\n" +  
 			"            	</ul>\r\n" + 
 			"        	</div>\r\n" + 
 			"    	</div>\r\n" + 
