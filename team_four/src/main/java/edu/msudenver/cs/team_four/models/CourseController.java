@@ -1,22 +1,17 @@
 package edu.msudenver.cs.team_four.models;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CourseController {
 	
-	private String courseTable = LayoutController.TABLE 
-			+ "					<tr>"
-			+ "						<th>CRN</th>"	
-			+ "						<th>Name</th>"
-			+ "						<th>Department</th>"
-			+ "						<th>Options</th>"
-			+ "					</tr>";
-	
-	@RequestMapping("/Courses")
-	public String home() {
-		return LayoutController.HEADER + courseTable + LayoutController.BODY;
-	}
+	@Autowired
+	private StudentService corService;
 
 }

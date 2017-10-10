@@ -1,0 +1,57 @@
+package edu.msudenver.cs.team_four.models;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ProfessorController {
+	
+	private ProfessorService proService;
+	
+	private String studentTable = LayoutController.TABLE
+			+ "					<tr>"
+			+ "						<th>Professor's Name</th>"	
+			+ "						<th>Deparment</th>"
+			+ "						<th>Options</th>"
+			+ "					</tr>";
+
+	@RequestMapping("/Professors")
+	public String getAllStudents(){
+		//Employee Id? with Name?
+		Professor pro = new Professor("111111", "Dr. Beaty", "CS");
+		proService.addProfessor(pro);
+		
+		String studentList = "";
+		for (Professor p : proService.getAllProfessors()) {
+			studentList += "<tr><th>" + p.getId() + "</th>" 
+							+ "<th>" + p.getName() + "</th>"
+							+ "<th>" + "<a href=\"/Students/" + p.getId() 
+							+ "\">INFO</a></tr>";
+		}
+		return LayoutController.HEADER + studentTable + studentList + LayoutController.BODY;
+	}
+	
+	@RequestMapping("/Professors/{id}")
+	public String getStudent(@PathVariable String id) {
+		Professor pro = proService.getProfessor(id);
+		
+		String studentForm = "<form name=\"stuInfo\" action=\"stuInfo\" method=\"PUT\" class=\"bg-info\" style=\"width:80%;margin-left:2%;margin-right:45%;padding:20px;>"
+				+ "			<div class=\"form-group\">" 
+				+ "				<label for=\"studentID\">Student Id:</label>"
+				+ "				<input name=\"id\" type=\"text\" class=\"form-control\" id=\"studentID\" placeholder=\"" 
+									+ pro.getId() + "\">"
+				+ "			</div>"
+				+ "			<div class=\"form-group\">"
+				+ "				<label for=\"studentName\"><br>Name:</label>"
+				+ "				<input name=\"newName\" type=\"text\" class=\"form-control\" id=\"studentName\" placeholder=\"" 
+									+ pro.getName() + "\">"
+				+ "			</div>"
+				+ "			<button type=\"submit\" class=\"btn btn-primary\">Update</button>"
+				+ "			<button type=\"delete\" class=\"btn btn-primary\">Delete</button>"
+				+ "		</form>";
+		
+		return LayoutController.HEADER + studentForm + LayoutController.BODY;
+	}
+
+}
