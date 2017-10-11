@@ -5,9 +5,11 @@
 			<link rel="icon" href="logo_handler.png" /> 
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1" /> 
-		  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+			<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+			<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
 		  	<link rel="stylesheet" href="/genStyle.css" /> 
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		  	<script src="/addNewEntry.js"></script>
 	</head>
 	<body style="background-image: url('http://images.wisegeek.com/black-asphalt.jpg')"> 
 		<nav class="navbar navbar-inverse navbar-right" role="navigation">
@@ -31,15 +33,28 @@
     	</div> 
 	</nav>
 	
-	<table class="table table-bordered table-hover bg-info">
+	<table class="table table-bordered table-hover bg-info" id="tab_logic">
 		<thead>
 			<tr>
 				<th> Professor ID </th>
 				<th> Professor Name </th>
 				<th> Options </th>
-				<th id="lastColTable"><button type="button" class="btn btn-warning">Add New</button> </th>
+				<th id="lastColTable"><a id="addNew" class="btn btn-warning">Add New</a> </th>
 			</tr>
 		</thead>
+		<tbody>
+			<tr class="topRow" style="display: none;">
+				<td>
+					<input name='id' type='text' placeholder='Professor ID' class='form-control input-md' />
+				</td>
+				<td>
+					<input name='name' type='text' placeholder='Professor Name' class='form-control input-md'  /> 
+				</td>
+				<td>
+					<button  name='option' class='form-control btn btn-success'>Save</button>
+				</td>
+			</tr>
+		</tbody>
 	</table>
 	
 	</body>

@@ -1,0 +1,15 @@
+$(document).ready(function(){
+      var i=1;
+     $("#show_row").click(function(){
+      	$('#newPro').html("	<td>
+      							<input placeholder="Professor ID" />
+      						</td>
+      						<td>
+      							<input placeholder='Professor Name' />
+      						</td>
+      						<td>
+      						
+      						</td>
+      	");
+  	});
+});

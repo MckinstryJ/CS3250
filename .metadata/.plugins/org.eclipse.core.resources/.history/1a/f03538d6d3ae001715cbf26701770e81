@@ -1,0 +1,13 @@
+$(document).ready(function(){
+    $("#addNew").click(function(){
+        $(".topRow").toggle();
+        var $this = $(this);
+        $this.toggleClass('btn-warning');
+        if($this.hasClass('btn-warning')){
+        	$this.text('Add New');
+        } else {
+        	$this.toggleClass('btn-danger');
+        	$this.text('Cancel');
+        }
+    });
+});
