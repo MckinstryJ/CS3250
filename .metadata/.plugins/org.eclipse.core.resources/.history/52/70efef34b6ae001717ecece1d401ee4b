@@ -1,0 +1,8 @@
+.table {
+	width: 80%;
+	margin: auto;
+}
+
+.table .th {
+	width: 100px;
+}
