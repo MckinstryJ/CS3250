@@ -13,6 +13,5 @@ $(document).ready(function(){
     $(".insertNewRow").on('click',function(){
     	var data="<tr><td>123456</td> <td>John Mckinstry</td> <td><button>Info</button></td></tr>";
         $('table').append(data);
-        return false;
-	});
+	}); 
 });

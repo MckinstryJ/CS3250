@@ -1,0 +1,43 @@
+$(document).ready(function(){
+    /* $("#addNew").on('click', function(){
+        $(".topRow").toggle();
+        var $this = $(this);
+        $this.toggleClass('btn-warning btn-danger');
+        if($this.hasClass('btn-warning')){
+        	$this.text('Add New');
+        } else {
+        	$this.text('Cancel');
+        }
+    }); */
+    
+    $(".insertNewRow").on('click',function(){
+    	var data="<tr><td>123456</td> <td>John Mckinstry</td> <td><button>Info</button></td></tr>";
+        $('table').append(data);
+        $('#myModelNorm').alert('Saved');
+        return false;
+	});
+	
+	$("#frmDemo").submit(function(e) {
+	e.preventDefault();
+	var name = $("#studentID").val();
+	var comment = $("#studentName").val();
+	
+	if(name == "" || comment == "" ) {
+		$("#error_message").show().html("All Fields are Required");
+	} else {
+		$("#error_message").html("").hide();
+		$.ajax({
+			type: "POST",
+			url: "",
+			data: "name="+name+"&comment="+comment,
+			success: function(data){
+				$('#success_message').fadeIn().html(data);
+				setTimeout(function() {
+					$('#success_message').fadeOut("slow");
+				}, 2000 );
+
+			}
+		});
+	}
+})
+});

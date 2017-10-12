@@ -60,20 +60,24 @@
             
             	<!-- Modal Body -->
             	<div class="modal-body">
-                
-                	<form id="frm" role="form" name="" method="post">
-                	  <div class="form-group">
-                	    <label for="studentID">Student ID</label>
-                	      <input type="text" class="form-control" id="studentID" placeholder="Enter ID"/>
-                	  </div>
-                	  <div class="form-group">
-                	    <label for="studentName">Student Name</label>
-                	      <input type="text" class="form-control"
-                	          id="studentName" placeholder="Enter Name"/>
-                	  </div>
-                	  <button type="submit" class="insertNewRow btn btn-success">Submit</button>
-               		  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                	</form>
+                	<form id="frm" method="post">
+   						<div class="input-group">Student ID</div>
+   						<div>
+        					<input type="text" name="studentID" id="studentID" class="input-control" />
+   						</div>
+    
+   						<div class="input-group">Student Name</div>
+   						<div>
+							<input type="text" name="studentName" id="studentName" class="input-control" />
+   						</div>
+
+   						<div style="float:left">
+        					<button class="btn btn-success" type="submit" name="btn-submit" id="btn-submit">Submit</button>
+        					<button class="btn btn-danger" type="button" data-dismiss="model">Close</button>
+    					</div>
+						<div id="error_message" class="ajax_response" style="float:left"></div>
+						<div id="success_message" class="ajax_response" style="float:left"></div>
+					</form>	
             	</div>
        		 </div>
     	</div>

@@ -71,7 +71,7 @@
                 	      <input type="text" class="form-control"
                 	          id="studentName" placeholder="Enter Name"/>
                 	  </div>
-                	  <button type="submit" class="insertNewRow btn btn-success">Submit</button>
+                	  <button type="button" class="insertNewRow btn btn-success">Submit</button>
                		  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 	</form>
             	</div>
