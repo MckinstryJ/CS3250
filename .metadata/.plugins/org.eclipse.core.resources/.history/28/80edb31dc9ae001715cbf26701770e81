@@ -1,9 +1,0 @@
-$(document).ready(function(){
-      var i=1;
-     $("#add_row").click(function(){
-      	$('#addPro).html("<td><input name='id' type='text' placeholder='Professor ID' class='form-control input-md'</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><button  name='option' class='form-control btn btn-success'>Save</button></td>");
-
-      	$('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-      	i++; 
-  	});
-});

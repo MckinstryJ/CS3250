@@ -1,0 +1,18 @@
+$(document).ready(function(){
+    $("#addNew").click(function(){
+        $(".topRow").toggle();
+        var $this = $(this);
+        $this.toggleClass('btn-warning btn-danger');
+        if($this.hasClass('btn-warning')){
+        	$this.text('Add New');
+        } else {
+        	$this.text('Cancel');
+        }
+    });
+    
+    
+    $(".insertNewRow").on('click',function(){
+    var data="<tr><td><input type='text' name='id'/></td> <td><input type='text' name='name'/></td> <td><button class="btn-warning">Info</button></td></tr>";
+        $('table').append(data);
+	});
+});

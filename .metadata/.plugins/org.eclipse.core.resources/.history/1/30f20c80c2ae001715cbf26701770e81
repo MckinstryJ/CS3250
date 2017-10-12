@@ -1,5 +1,0 @@
-$(document).ready(function(){
-     $("#show_row").click(function(){
-      	$('#newPro').html("	<td><input type='text' placeholder="Professor ID" class='form-control input-md'/></td><td><input type='text' placeholder='Professor Name' class='form-control input-md' /></td><td></td>");
-  	});
-});

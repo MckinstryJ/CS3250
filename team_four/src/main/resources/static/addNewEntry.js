@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#addNew").click(function(){
+    /* $("#addNew").on('click', function(){
         $(".topRow").toggle();
         var $this = $(this);
         $this.toggleClass('btn-warning btn-danger');
@@ -8,5 +8,11 @@ $(document).ready(function(){
         } else {
         	$this.text('Cancel');
         }
-    });
+    }); */
+    
+    $(".insertNewRow").on('click',function(){
+    	var data="<tr><td>123456</td> <td>John Mckinstry</td> <td><button>Info</button></td></tr>";
+        $('table').append(data);
+        return false;
+	});
 });
