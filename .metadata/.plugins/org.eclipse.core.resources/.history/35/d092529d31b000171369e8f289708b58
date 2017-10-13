@@ -1,0 +1,10 @@
+package edu.msudenver.cs.team_four.models;
+
+import java.io.Serializable;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface BaseRepository<T, String extends Serializable> extends CrudRepository<T, String>{
+
+	
+}

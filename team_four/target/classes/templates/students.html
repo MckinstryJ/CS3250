@@ -61,17 +61,16 @@
             	<!-- Modal Body -->
             	<div class="modal-body">
                 
-                	<form id="frm" role="form" name="" method="post">
+                	<form id="frm" th:action="@{/students}" th:object="${student}" method="post">
                 	  <div class="form-group">
                 	    <label for="studentID">Student ID</label>
-                	      <input type="text" class="form-control" id="studentID" placeholder="Enter ID"/>
+                	      <input type="text" th:field="*{id}" class="form-control" id="studentID" placeholder="Enter ID"/>
                 	  </div>
                 	  <div class="form-group">
                 	    <label for="studentName">Student Name</label>
-                	      <input type="text" class="form-control"
-                	          id="studentName" placeholder="Enter Name"/>
+                	      <input type="text" th:field="*{name}" class="form-control" id="studentName" placeholder="Enter Name"/>
                 	  </div>
-                	  <button type="submit" class="insertNewRow btn btn-success">Submit</button>
+                	  <button type="submit" class="btn btn-success">Submit</button>
                		  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 	</form>
             	</div>

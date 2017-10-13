@@ -1,17 +1,40 @@
-$(document).ready(function(){
-    /* $("#addNew").on('click', function(){
-        $(".topRow").toggle();
-        var $this = $(this);
-        $this.toggleClass('btn-warning btn-danger');
-        if($this.hasClass('btn-warning')){
-        	$this.text('Add New');
-        } else {
-        	$this.text('Cancel');
-        }
-    }); */
+$( document ).ready(function() {
+	
+	var url = window.location;
+	
+	// SUBMIT FORM
+    $("#frm").submit(function(event) {
+		ajaxPost();
+	});
     
-    $(".insertNewRow").on('click',function(){
-    	var data="<tr><td>123456</td> <td>John Mckinstry</td> <td><button>Info</button></td></tr>";
-        $('table').append(data);
-	}); 
-});
+    
+    function ajaxPost(){
+    	
+    	// PREPARE FORM DATA
+    	var formData = {
+    		name : $("#id").val(),
+    		name :  $("#name").val()
+    	}
+    	
+    	// DO POST
+    	$.ajax({
+			type : "POST",
+			contentType : "application/json",
+			url : url,
+			data : JSON.stringify(formData),
+			dataType : 'json',
+			success : function(result) {
+				console.log(result);
+			},
+		});
+    	
+    	// Reset FormData after Posting
+    	resetData();
+ 
+    }
+    
+    function resetData(){
+    	$("#id").val("");
+    	$("#name").val("");
+    }
+})

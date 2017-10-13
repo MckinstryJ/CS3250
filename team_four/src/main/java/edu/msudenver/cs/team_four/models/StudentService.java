@@ -9,27 +9,27 @@ import org.springframework.stereotype.Service;
 public class StudentService {
 
 	@Autowired
-	private StudentRepository StudentRepository;
+	private StudentRepository stuRepo;
 	
 	public List<Student> getAllStudents() {
 		List<Student> Students = new ArrayList<>();
-		StudentRepository.findAll().forEach(Students::add);
+		stuRepo.findAll().forEach(Students::add);
 		return Students;
 	}
 	
 	public Student getStudent(String id) {
-		return StudentRepository.findOne(id);
+		return stuRepo.findOne(id);
 	}
 	
 	public void addStudent(Student Student) {
-		StudentRepository.save(Student);
+		stuRepo.save(Student);
 	}
 	
 	public void updateStudent(String id, Student Student) {
-		StudentRepository.save(Student);
+		stuRepo.save(Student);
 	}
 	
 	public void deleteStudent(String id) {
-		StudentRepository.delete(id);
+		stuRepo.delete(id);
 	}
 }
