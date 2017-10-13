@@ -1,16 +1,22 @@
 package edu.msudenver.cs.team_four.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Courses {
+	
+	@Id
+	public String coursenumber;
 	public String courseName;
-	public String department;
-	public int coursenumber;
-	public int credits;
-	public String description;
-	public String learningObjectives;
 	public String prereqs;
 	public String coreqs; 
+	public String department;
+	public String description;
+	public String learningObjectives;
+	public String credits;
 	
-	public Courses(String courseName, String department, int coursenumber, int credits, String description, 
+	public Courses(String courseName, String department, String coursenumber, String credits, String description, 
 					String learningObjectives, String prereqs, String coreqs) {
 						this.courseName = courseName;
 						this.department = department;
@@ -21,73 +27,55 @@ public class Courses {
 						this.prereqs = prereqs;
 						this.coreqs = coreqs;
 					}
+	public Courses() {
+		// TODO Auto-generated constructor stub
+	}
+	public String getCoursenumber() {
+		return coursenumber;
+	}
+	public void setCoursenumber(String coursenumber) {
+		this.coursenumber = coursenumber;
+	}
 	public String getCourseName() {
-		return this.courseName;
+		return courseName;
 	}
-	
-	public void changeCourseName(String newCourseName) {
-		this.courseName = newCourseName;
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
 	}
-	
-	public String changeDepartment(String newDept) {
-		this.department = newDept;
-		return this.department;
+	public String getPrereqs() {
+		return prereqs;
 	}
-	
-	public int changeCRN(int newCrn) {
-		this.coursenumber = newCrn;
-		return this.coursenumber;
+	public void setPrereqs(String prereqs) {
+		this.prereqs = prereqs;
 	}
-	
-	public int changeCredits(int newCreds) {
-		this.credits = newCreds;
-		return this.credits;
+	public String getCoreqs() {
+		return coreqs;
 	}
-	
-	public String changeDescription(String newDescrip) {
-		this.description = newDescrip;
-		return this.description;
-	}
-	
-	public String changeLearningObj(String newLearn) {
-		this.learningObjectives = newLearn;
-		return this.learningObjectives;
-	}
-	
-	public String changePrereqs(String newPrereq) {
-		this.prereqs = newPrereq;
-		return this.prereqs;
-	}
-	
-	public String changeCoreq(String newCoreq) {
-		this.coreqs = newCoreq;
-		return this.coreqs;
+	public void setCoreqs(String coreqs) {
+		this.coreqs = coreqs;
 	}
 	public String getDepartment() {
-		return this.department;
+		return department;
 	}
-	
-	public int getCRN() {
-		return this.coursenumber;
+	public void setDepartment(String department) {
+		this.department = department;
 	}
-	
-	public int getCredits() {
-		return this.credits;
-	}
-	
 	public String getDescription() {
-		return this.description;
+		return description;
 	}
-	
-	public String getLearningObj() {
-		return this.learningObjectives;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	
-	public String getPrereqs() {
-		return this.prereqs;
+	public String getLearningObjectives() {
+		return learningObjectives;
 	}
-	
-	public String getCoreq() {
-		return this.coreqs;
+	public void setLearningObjectives(String learningObjectives) {
+		this.learningObjectives = learningObjectives;
+	}
+	public String getCredits() {
+		return credits;
+	}
+	public void setCredits(String credits) {
+		this.credits = credits;
 	}
 }

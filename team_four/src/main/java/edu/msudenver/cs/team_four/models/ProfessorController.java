@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,8 +21,15 @@ public class ProfessorController {
 	private ProfessorService proService;
 	
 	@RequestMapping("/professors")
-	public String professorLanding() {
+	public String professorLanding(Model model) {
+		model.addAttribute("professor", new Professor());
 		return "professors";
+	}
+	
+	@RequestMapping(value="/professors", method=RequestMethod.POST)
+	public void professorSubmit(@ModelAttribute(value="professor") Professor pro)
+	{	
+		proService.addProfessor(pro);
 	}
 	/*
 	@RequestMapping("/professor.html/{id}")

@@ -16,6 +16,10 @@ public class Professor {
 		this.name = name;
 	}
 
+	public Professor() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getId() {
 		return id;
 	}

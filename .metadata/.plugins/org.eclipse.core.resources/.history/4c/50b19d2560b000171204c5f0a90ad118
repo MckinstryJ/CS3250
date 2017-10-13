@@ -1,0 +1,102 @@
+package edu.msudenver.cs.team_four.models;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Courses {
+	
+	@Id
+	public String coursenumber;
+	public String courseName;
+	public String prereqs;
+	public String coreqs; 
+	public String department;
+	public String description;
+	public String learningObjectives;
+	public String credits;
+	
+	public Courses(String courseName, String department, String coursenumber, String credits, String description, 
+					String learningObjectives, String prereqs, String coreqs) {
+						this.courseName = courseName;
+						this.department = department;
+						this.coursenumber = coursenumber;
+						this.credits = credits;
+						this.description = description;
+						this.learningObjectives = learningObjectives;
+						this.prereqs = prereqs;
+						this.coreqs = coreqs;
+					}
+	public Courses() {
+		// TODO Auto-generated constructor stub
+	}
+	public String getCourseName() {
+		return this.courseName;
+	}
+	
+	public void changeCourseName(String newCourseName) {
+		this.courseName = newCourseName;
+	}
+	
+	public String changeDepartment(String newDept) {
+		this.department = newDept;
+		return this.department;
+	}
+	
+	public String changeCRN(String newCrn) {
+		this.coursenumber = newCrn;
+		return this.coursenumber;
+	}
+	
+	public String changeCredits(String newCreds) {
+		this.credits = newCreds;
+		return this.credits;
+	}
+	
+	public String changeDescription(String newDescrip) {
+		this.description = newDescrip;
+		return this.description;
+	}
+	
+	public String changeLearningObj(String newLearn) {
+		this.learningObjectives = newLearn;
+		return this.learningObjectives;
+	}
+	
+	public String changePrereqs(String newPrereq) {
+		this.prereqs = newPrereq;
+		return this.prereqs;
+	}
+	
+	public String changeCoreq(String newCoreq) {
+		this.coreqs = newCoreq;
+		return this.coreqs;
+	}
+	public String getDepartment() {
+		return this.department;
+	}
+	
+	public String getCRN() {
+		return this.coursenumber;
+	}
+	
+	public String getCredits() {
+		return this.credits;
+	}
+	
+	public String getDescription() {
+		return this.description;
+	}
+	
+	public String getLearningObj() {
+		return this.learningObjectives;
+	}
+	
+	public String getPrereqs() {
+		return this.prereqs;
+	}
+	
+	public String getCoreq() {
+		return this.coreqs;
+	}
+}
