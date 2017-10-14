@@ -12,8 +12,8 @@ public class CourseService {
 	@Autowired
 	private CourseRepository courRepo;
 	
-	public List<Courses> getAllCourses() {
-		List<Courses> cour = new ArrayList<>();
+	public ArrayList<Courses> getAllCourses() {
+		ArrayList<Courses> cour = new ArrayList<>();
 		courRepo.findAll().forEach(cour::add);
 		return cour;
 	}

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class StudentController {
@@ -22,18 +23,29 @@ public class StudentController {
 	@Autowired
 	private StudentService studentService;
 	
-	@RequestMapping("/students")
-	public String studentLanding(Model model) {
+	@RequestMapping(value="/students", method=RequestMethod.POST)
+	public String studentSubmit(Student student, Model model)
+	{	
+		studentService.addStudent(student);
+		model.addAttribute("students", studentService.getAllStudents());
 		model.addAttribute("student", new Student());
 		return "students";
 	}
 	
-	@RequestMapping(value="/students", method=RequestMethod.POST)
-	public void studentSubmit(@ModelAttribute(value="student") Student student)
-	{	
-		studentService.addStudent(student);
+	@RequestMapping(value ="/students", method = RequestMethod.GET)
+	public String list(Model model) {
+		model.addAttribute("student", new Student());
+		model.addAttribute("students", studentService.getAllStudents());
+		return "students";
 	}
-
+	
+	@RequestMapping(method=RequestMethod.POST, value="/deleteStudent")
+	public String deleteStudent(@RequestParam("studentId") String id, Model model) {
+		studentService.deleteStudent(id);
+		model.addAttribute("student", new Student());
+		model.addAttribute("students", studentService.getAllStudents());
+		return "students";
+	}
 /*	
 	@RequestMapping(method=RequestMethod.POST, value="/Students")
 	public void addStudent(@RequestBody Student student) {
@@ -51,11 +63,6 @@ public class StudentController {
 		}
 		
 		return "";
-	}
-	
-	@RequestMapping(method=RequestMethod.DELETE, value="/Students/{id}")
-	public void deleteStudent(@PathVariable String id) {
-		studentService.deleteStudent(id);
 	}
 	*/
 }

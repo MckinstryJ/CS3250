@@ -6,23 +6,35 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class CourseController {
 	
 	@Autowired
 	private CourseService courService;
-	
-	@RequestMapping("/courses")
-	public String professorLanding(Model model) {
+
+	@RequestMapping(value="/courses", method=RequestMethod.POST)
+	public String courseSubmit(Courses course, Model model)
+	{	
+		courService.addCourse(course);
+		model.addAttribute("courses", courService.getAllCourses());
 		model.addAttribute("course", new Courses());
 		return "courses";
 	}
 	
-	@RequestMapping(value="/courses", method=RequestMethod.POST)
-	public void professorSubmit(@ModelAttribute(value="course") Courses cour)
-	{	
-		courService.addCourse(cour);
+	@RequestMapping(value ="/courses", method = RequestMethod.GET)
+	public String list(Model model) {
+		model.addAttribute("courses", courService.getAllCourses());
+		model.addAttribute("course", new Courses());
+		return "courses";
 	}
-
+	
+	@RequestMapping(method=RequestMethod.POST, value="/deleteCourse")
+	public String deleteCourse(@RequestParam("courseId") String id, Model model) {
+		courService.deleteCourse(id);
+		model.addAttribute("course", new Courses());
+		model.addAttribute("courses", courService.getAllCourses());
+		return "courses";
+	}
 }

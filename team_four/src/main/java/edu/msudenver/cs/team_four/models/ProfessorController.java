@@ -20,17 +20,30 @@ public class ProfessorController {
 	@Autowired
 	private ProfessorService proService;
 	
-	@RequestMapping("/professors")
-	public String professorLanding(Model model) {
+	@RequestMapping(value="/professors", method=RequestMethod.POST)
+	public String professorSubmit(Professor pro, Model model)
+	{	
+		proService.addProfessor(pro);
+		model.addAttribute("professors", proService.getAllProfessors());
 		model.addAttribute("professor", new Professor());
 		return "professors";
 	}
 	
-	@RequestMapping(value="/professors", method=RequestMethod.POST)
-	public void professorSubmit(@ModelAttribute(value="professor") Professor pro)
-	{	
-		proService.addProfessor(pro);
+	@RequestMapping(value ="/professors", method = RequestMethod.GET)
+	public String list(Model model) {
+		model.addAttribute("professor", new Professor());
+		model.addAttribute("professors", proService.getAllProfessors());
+		return "professors";
 	}
+	
+	@RequestMapping(method=RequestMethod.POST, value="/deletePro")
+	public String deleteProfessor(@RequestParam("proId") String id, Model model) {
+		proService.deleteProfessor(id);
+		model.addAttribute("professor", new Professor());
+		model.addAttribute("professors", proService.getAllProfessors());
+		return "professors";
+	}
+	
 	/*
 	@RequestMapping("/professor.html/{id}")
 	public Professor getProfessor(@PathVariable String id) {

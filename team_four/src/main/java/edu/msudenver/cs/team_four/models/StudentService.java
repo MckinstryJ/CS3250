@@ -11,8 +11,8 @@ public class StudentService {
 	@Autowired
 	private StudentRepository stuRepo;
 	
-	public List<Student> getAllStudents() {
-		List<Student> Students = new ArrayList<>();
+	public ArrayList<Student> getAllStudents() {
+		ArrayList<Student> Students = new ArrayList<>();
 		stuRepo.findAll().forEach(Students::add);
 		return Students;
 	}
