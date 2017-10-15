@@ -8,12 +8,14 @@ public class Professor {
 
 	@Id
 	private String id;
-	private String name;
+	private String firstName;
+	private String lastName;
 	
-	public Professor(String id, String name) {
+	public Professor(String id, String firstName, String lastName) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
 
 	public Professor() {
@@ -28,11 +30,19 @@ public class Professor {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 }

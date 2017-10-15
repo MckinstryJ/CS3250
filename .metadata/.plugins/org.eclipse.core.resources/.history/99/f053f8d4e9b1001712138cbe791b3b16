@@ -1,0 +1,10 @@
+$( document ).ready(
+	function checkInput() {
+		var x = document.forms["frm"]["id"].value;
+		if (isNaN(x))
+		{
+			alert("Must input numbers");
+			return false;
+		}
+	}
+})

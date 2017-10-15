@@ -25,7 +25,7 @@ public class StudentService {
 		stuRepo.save(Student);
 	}
 	
-	public void updateStudent(String id, Student Student) {
+	public void updateStudent(Student Student) {
 		stuRepo.save(Student);
 	}
 	

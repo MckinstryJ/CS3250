@@ -1,0 +1,99 @@
+<!DOCTYPE HTML> 
+<html xmlns:th="http://www.thymeleaf.org">
+	<head> 
+		<title>MSU Denver</title> 
+			<link rel="icon" href="logo_handler.png" /> 
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+			<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+			<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+		  	<link rel="stylesheet" href="/genStyle.css" /> 
+	</head>
+	<body style="background-image: url('http://images.wisegeek.com/black-asphalt.jpg')"> 
+		<nav class="navbar navbar-inverse navbar-right" role="navigation">
+    		<div class="container">
+        		<div class="navbar-header"> 
+            		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+                		<span class="sr-only">Toggle navigation</span>
+                		<span class="icon-bar"></span>
+                		<span class="icon-bar"></span> 
+             		<span class="icon-bar"></span> 
+            		</button>
+        		</div>   
+        	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
+           	 <ul class="nav navbar-nav">
+               	 <li><a href="/">MSU Denver</a></li> 
+				 <li><a href="/students">Students</a></li> 
+               	 <li><a href="/professors">Professors</a></li> 
+               	 <li><a href="/courses">Courses</a></li> 
+           	</ul>
+        	</div> 
+    	</div> 
+	</nav>
+	
+	<table class="table table-bordered table-hover bg-info" id="tab_logic">
+		<thead>
+			<tr>
+				<th> Student ID </th>
+				<th> Student Name </th>
+				<th> Options </th>
+				<th id="lastColTable">
+					<button class="btn btn-warning" data-toggle="modal" data-target="#myModalNorm">Add New</button> 
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="student : ${students}">
+				<td th:text="${student.id}"></td>
+				<td th:text="${student.firstName} + ' ' + ${student.lastName}"></td>
+				<td>
+					<form method="POST" th:action="@{/getInfo}" th:action="${student} data-toggle="modal" data-target="#myModalNorm">
+						<button class="btn btn-primary" style="float:left;width:45%">Info</button>
+					</from>
+					<form method="POST" th:action="@{/deleteStudent(studentId=${student.id})}">
+						<button type="submit" class="btn btn-danger" style="float:right;width:45%">Delete</button>
+					</form>				
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+	
+	<div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    	<div class="modal-dialog">
+	        <div class="modal-content">
+    	        <!-- Modal Header -->
+        	    <div class="modal-header">
+            	    <button type="button" class="close" data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                	</button>
+                	<h4 class="modal-title" id="myModalLabel">
+                    	Add New Student
+                	</h4>
+            	</div>
+            
+            	<!-- Modal Body -->
+            	<div class="modal-body">
+                
+                	<form id="frm" th:action="@{/students}" th:object="${student}" method="post">
+                	  <div class="form-group">
+                	    <label class="control-label">Student ID</label>
+                	      <input type="text" th:field="*{id}" class="form-control" placeholder="Enter ID"/>
+                	  </div>
+                	  <div class="form-group">
+                	    <label class="control-label">Student Name</label>
+                	      <input type="text" th:field="*{firstName}" class="form-control" placeholder="Enter First Name"/>
+                	      <br />
+                	      <input type="text" th:field="*{lastName}" class="form-control" placeholder="Enter Last Name" />
+                	  </div>
+                	  <button type="submit" class="btn btn-success">Submit</button>
+               		  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                	</form>
+            	</div>
+       		 </div>
+    	</div>
+	</div>
+	
+	</body>
+</html>
