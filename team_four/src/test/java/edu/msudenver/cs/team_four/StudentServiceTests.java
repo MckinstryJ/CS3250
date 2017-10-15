@@ -2,16 +2,19 @@ package edu.msudenver.cs.team_four;
 
 import static org.junit.Assert.*;
 
+import javax.transaction.Transactional;
+
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import edu.msudenver.cs.team_four.models.Student;
 import edu.msudenver.cs.team_four.models.StudentController;
 import edu.msudenver.cs.team_four.models.StudentService;
 
 public class StudentServiceTests {
-	static Student testerStudent1;
-	static Student testerStudent2;
-	static Student testerStudent3;
+	static Student testerStudent1 = new Student("Bob", "111112");
+	static Student testerStudent2 = new Student("Mick", "121212");
+	static Student testerStudent3 = new Student("Jane", "987654");
 	static StudentController testerUC;
 	static StudentService testerUS;
 	static String testerId;
