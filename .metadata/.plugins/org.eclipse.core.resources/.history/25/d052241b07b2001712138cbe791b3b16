@@ -72,7 +72,7 @@
             
             			<!-- Modal Body -->
             			<div class="modal-body">
-                			<form id="frm" th:action="@{/updateCourse}" th:object="${course}" method="post">
+                			<form id="frm" th:action="@{/updateStudent}" th:object="${student}" method="post">
                 	  		<div class="form-group">
                 	    		<label class="control-label">CRN</label>
                 	      		<input type="text" th:value="${course.coursenumber}" id="coursenumber" name="coursenumber" class="form-control" placeholder="Enter CRN (ex 123456)" />

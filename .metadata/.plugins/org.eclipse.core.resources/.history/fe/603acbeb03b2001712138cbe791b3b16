@@ -72,13 +72,13 @@
                 			<form id="frm" th:action="@{/updateStudent}" th:object="${student}" method="post">
                 	  		<div class="form-group">
                 	    		<label class="control-label">Student ID</label>
-                	      		<input type="text" th:value="${student.id}" id="id" name="id" class="form-control" placeholder="Enter ID" />
+                	      		<input type="text" th:field="*{id}" class="form-control" placeholder="Enter ID" />
                 	  		</div>
                 	  		<div class="form-group">
                 	    		<label class="control-label">Student Name</label>
-                	      		<input type="text" th:value="${student.firstName}" id="firstName" name="firstName" class="form-control" placeholder="Enter First Name"/>
+                	      		<input type="text" th:field="*{firstName}" class="form-control" placeholder="Enter First Name"/>
                 	      		<br />
-                	      		<input type="text" th:value="${student.lastName}" id="lastName" name="lastName" class="form-control" placeholder="Enter Last Name" />
+                	      		<input type="text" th:field="*{lastName}" class="form-control" placeholder="Enter Last Name" />
                 	  		</div>
                 	  		<button type="submit" class="btn btn-success">Submit</button>
                		  		<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
