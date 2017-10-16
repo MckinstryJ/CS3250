@@ -26,7 +26,7 @@ public class CourseService {
 		courRepo.save(cour);
 	}
 	
-	public void updateCourse(Courses cour) {
+	public void updateCourse(String id, Courses cour) {
 		courRepo.save(cour);
 	}
 	

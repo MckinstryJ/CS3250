@@ -37,12 +37,4 @@ public class CourseController {
 		model.addAttribute("courses", courService.getAllCourses());
 		return "courses";
 	}
-	
-	@RequestMapping(method=RequestMethod.POST, value="/updateCourse")
-	public String updateCourse(Courses course, Model model) {
-		courService.updateCourse(course);
-		model.addAttribute("course", new Courses());
-		model.addAttribute("courses", courService.getAllCourses());
-		return "courses";
-	}
 }
