@@ -29,7 +29,7 @@ public class ProfessorService {
 		proRepo.save(pro);
 	}
 	
-	public void updateProfessor(Professor pro) {
+	public void updateProfessor(String id, Professor pro) {
 		proRepo.save(pro);
 	}
 	

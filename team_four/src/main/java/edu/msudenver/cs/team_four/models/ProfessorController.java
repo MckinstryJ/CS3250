@@ -44,14 +44,6 @@ public class ProfessorController {
 		return "professors";
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/updatePro")
-	public String updateProfessor(Professor professor, Model model) {
-		proService.updateProfessor(professor);
-		model.addAttribute("professor", new Professor());
-		model.addAttribute("professors", proService.getAllProfessors());
-		return "professors";
-	}
-	
 	/*
 	@RequestMapping("/professor.html/{id}")
 	public Professor getProfessor(@PathVariable String id) {

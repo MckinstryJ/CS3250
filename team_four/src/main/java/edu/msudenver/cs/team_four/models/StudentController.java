@@ -1,7 +1,6 @@
 package edu.msudenver.cs.team_four.models;
 
 import java.io.Console;
-import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -47,17 +46,7 @@ public class StudentController {
 		model.addAttribute("students", studentService.getAllStudents());
 		return "students";
 	}
-	
-	@RequestMapping(method=RequestMethod.POST, value="/updateStudent")
-	public String updateStudent(Student student, Model model) {
-		studentService.updateStudent(student);
-		model.addAttribute("student", new Student());
-		model.addAttribute("students", studentService.getAllStudents());
-		return "students";
-	}
-	
 /*	
- * 
 	@RequestMapping(method=RequestMethod.POST, value="/Students")
 	public void addStudent(@RequestBody Student student) {
 		studentService.addStudent(student);

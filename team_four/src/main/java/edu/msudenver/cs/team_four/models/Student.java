@@ -8,19 +8,17 @@ public class Student {
 
 	@Id
 	private String id;
-	private String firstName;
-	private String lastName;
+	private String name;
 	
 	
 	public Student() {
 		
 	}
 	
-	public Student(String id, String firstName, String lastName) {
+	public Student(String name, String id) {
 		super();
 		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.name = name;
 	}
 	
 	public String getId() {
@@ -31,21 +29,17 @@ public class Student {
 	public void setId(String id) {
 		this.id = id;
 	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
 	
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+	
 	
 }
