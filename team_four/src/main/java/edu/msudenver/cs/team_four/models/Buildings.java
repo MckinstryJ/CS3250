@@ -49,5 +49,10 @@ public class Buildings {
     public void setAcronym(String acronym) {
         this.acronym = acronym;
     }
+    
+    public String getId() {
+
+        return id;
+    }
 
 }

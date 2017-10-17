@@ -48,4 +48,9 @@ public class Student {
 		this.lastName = lastName;
 	}
 	
+	public String getName() {
+		String fullName = null;
+		fullName = this.getFirstName() + " " + this.getLastName();
+		return fullName;
+	}
 }

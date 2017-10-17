@@ -12,9 +12,9 @@ import edu.msudenver.cs.team_four.models.StudentController;
 import edu.msudenver.cs.team_four.models.StudentService;
 
 public class StudentServiceTests {
-	static Student testerStudent1 = new Student("Bob", "111112");
-	static Student testerStudent2 = new Student("Mick", "121212");
-	static Student testerStudent3 = new Student("Jane", "987654");
+	static Student testerStudent1 = new Student("111112", "Bob","lastName");
+	static Student testerStudent2 = new Student("121212","Mick","lastName");
+	static Student testerStudent3 = new Student("987654","Jane","lastName");
 	static StudentController testerUC;
 	static StudentService testerUS;
 	static String testerId;
@@ -30,7 +30,7 @@ public class StudentServiceTests {
 	
 	@Test
 	public void getStudentTest() {
-		testerStudent1 = new Student("Bill", "123456");
+		testerStudent1 = new Student("123456","Bill","lastName");
 		testerUS = new StudentService();
 		testerUS.addStudent(testerStudent1);
 		assertFalse(testerUS.getStudent("123456").toString().isEmpty());
@@ -38,7 +38,7 @@ public class StudentServiceTests {
 	
 	@Test
 	public void getStudentNameTest() {
-		testerStudent1 = new Student("Bill", "123456");
+		testerStudent1 = new Student("123456","Bill","lastName");
 		testerUS = new StudentService();
 		testerUS.addStudent(testerStudent1);
 		assertEquals("Bill", testerUS.getStudent("123456"));
@@ -46,17 +46,17 @@ public class StudentServiceTests {
 	
 	@Test
 	public void updateStudentTest() {
-		testerStudent1 = new Student("Bill", "123456");
-		testerStudent2 = new Student("Shetern", "123456");
+		testerStudent1 = new Student("123456","Bill","lastName");
+		testerStudent2 = new Student("123456","Shetern","lastName");
 		testerUS = new StudentService();
 		testerUS.addStudent(testerStudent1);
-		testerUS.updateStudent("123456", testerStudent2);
+		testerUS.updateStudent(testerStudent2);
 		assertEquals("Shetern", testerUS.getStudent("123456"));
 	}
 	
 	@Test
 	public void deleteStudentTest() {
-		testerStudent1 = new Student("Bill", "123456");
+		testerStudent1 = new Student("123456","Bill","lastName");
 		testerUS = new StudentService();
 		testerUS.addStudent(testerStudent1);
 		testerUS.deleteStudent(testerId);

@@ -9,7 +9,7 @@ import edu.msudenver.cs.team_four.models.*;
 public class ProfessorTest {
 
 	
-	static Professor profTest = new Professor("5678" , "Billy Mays");
+	static Professor profTest = new Professor("5678" , "Billy","Mays");
 	
 	@Test
 	public void idTest() {
@@ -18,8 +18,14 @@ public class ProfessorTest {
 	}
 	
 	@Test
-	public void nameTest() {
-		profTest.setName("Jim Rage");
-		assertEquals("Jim Rage", profTest.getName());
+	public void firstNameTest() {
+		profTest.setFirstName("Jim");
+		assertEquals("Jim", profTest.getFirstName());
+	}
+	
+	@Test
+	public void lastNameTest() {
+		profTest.setLastName("Rage");
+		assertEquals("Rage", profTest.getLastName());
 	}
 }

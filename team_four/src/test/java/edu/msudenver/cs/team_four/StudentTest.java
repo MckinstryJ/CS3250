@@ -21,9 +21,9 @@ public class StudentTest {
 	
 	@BeforeClass
 	public static void testSetup() {
-		tester = new Student("Alfred", "12345");
-		testerA = new Student("Bruce", "900689234");
-		testerB = new Student("Richard", "900548322");
+		tester = new Student("12345","Alfred","lastName");
+		testerA = new Student("900689234","Bruce","lastName");
+		testerB = new Student("900548322","Richard","lastName");
 		tester2 = new StudentController();
 		tester3 = new StudentService();
 	}
@@ -51,33 +51,50 @@ public class StudentTest {
 	@Test
 	//Tests the Studentname fetch method
 	public void StudentNamePass() {
-		testerA = new Student("Bruce", "12345");
-		assertEquals("Bruce", testerA.getName());
+		testerA = new Student("12345","Bruce","lastName");
+		assertEquals("Bruce lastName", testerA.getName());
 	}
 	@Test
 	//Tests the Studentname change method
-	public void changeStudentName() {
-		tester = new Student("Bill", "12345");
-		tester.setName("Frank");
-		assertEquals("Frank",tester.getName());
+	public void changeStudentFirstName() {
+		tester = new Student("12345","Bill","lastName");
+		tester.setFirstName("Frank");
+		assertEquals("Frank",tester.getFirstName());
 	}
 	@Test
 	//tests the Studentname change method and is supposed to fail
-	public void changeStudentNameFail() {
-		tester = new Student("Bill", "123555");
-		tester.setName("Steve");
-		assertNotEquals("Frank",tester.getName());
+	public void changeStudentFirstNameFail() {
+		tester = new Student("12345","Bill","lastName");
+		tester.setFirstName("Steve");
+		assertNotEquals("Frank",tester.getFirstName());
 	}
+	
+	@Test
+	//Tests the Studentname change method
+	public void changeStudentLastName() {
+		tester = new Student("12345","Bill","lastName");
+		tester.setLastName("otherName");
+		assertEquals("otherName",tester.getLastName());
+	}
+	
+	@Test
+	//tests the Studentname change method and is supposed to fail
+	public void changeStudentLastNameFail() {
+		tester = new Student("12345","Bill","lastName");
+		tester.setLastName("otherName");
+		assertNotEquals("Frank",tester.getLastName());
+	}
+	
 	@Test
 	//Testing fetch id
 	public void idTest() {
-		tester = new Student("Bob", "1234456");
+		tester = new Student("1234456","Bob","lastName");
 		assertEquals("1234456", tester.getId());
 	}
 	@Test
 	//testing change id
 	public void changeIdTest() {
-		tester = new Student("Bob", "111111");
+		tester = new Student("1234456","Bob","lastName");
 		tester.setId("67890");
 		assertEquals("67890", tester.getId());
 	}

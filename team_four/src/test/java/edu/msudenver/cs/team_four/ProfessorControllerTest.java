@@ -25,14 +25,14 @@ public class ProfessorControllerTest {
 	@RequestMapping(value="/professors", method=RequestMethod.POST)
 	public void subTest() {
 		Model model = null;
-		Professor pro = new Professor("Willis","1234");
+		Professor pro = new Professor("1234","Willis","lastName");
 		assertEquals("professors", proContTest.professorSubmit(pro, model));
 	}
 	@Test
 	@RequestMapping(value ="/professors", method = RequestMethod.GET)
 	public void listTest() {
 		Model model = null;
-		Professor pro = new Professor("Willis","1234");
+		Professor pro = new Professor("1234","Willis","lastName");
 		proContTest.professorSubmit(pro, model);
 		assertEquals("professors", proContTest.list(model));
 	}
@@ -40,7 +40,7 @@ public class ProfessorControllerTest {
 	@RequestMapping(method=RequestMethod.POST, value="/deleteProfessor")
 	public void deleteCourseTest() {
 		Model model = null;
-		Professor pro = new Professor("Willis","1234");
+		Professor pro = new Professor("1234","Willis","lastName");
 		proContTest.professorSubmit(pro, model);
 		assertEquals("professors", proContTest.deleteProfessor("1234", model));
 	}

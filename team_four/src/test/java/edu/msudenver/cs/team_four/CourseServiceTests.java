@@ -36,7 +36,7 @@ public class CourseServiceTests {
 		courseTest1 = new Courses("Calculus", "Math", "1400", "4", "Learn Calculus","You Learn Calculus", "Trigonometry","N/A" );
 		courseServ = new CourseService();
 		courseServ.addCourse(courseTest1);
-		courseServ.updateCourse("1400", courseTest2);
+		courseServ.updateCourse(courseTest2);
 		assertEquals("Calculus 2", courseServ.getCourse("2400"));
 	}
 	@Test
