@@ -1,4 +1,4 @@
-package edu.msudenver.cs.team_four.User;
+package edu.msudenver.cs.team_four.models;
 
 import javax.persistence.*;
 
