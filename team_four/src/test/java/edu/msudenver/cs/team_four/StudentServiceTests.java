@@ -1,10 +1,12 @@
 package edu.msudenver.cs.team_four;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
-import javax.transaction.Transactional;
-
+import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import edu.msudenver.cs.team_four.models.Student;
@@ -15,51 +17,51 @@ public class StudentServiceTests {
 	static Student testerStudent1 = new Student("111112", "Bob","lastName");
 	static Student testerStudent2 = new Student("121212","Mick","lastName");
 	static Student testerStudent3 = new Student("987654","Jane","lastName");
-	static StudentController testerUC;
-	static StudentService testerUS;
+	@Mock
+	private StudentController testerUC;
+	@Mock
+	private StudentService testerUS;
 	static String testerId;
+
+	@Before
+	public void setUpMock() {
+		testerUC = mock(StudentController.class);
+		testerUS = mock(StudentService.class);
+
+	}
+	@Test
+	public void testMockCreation() {
+		assertNotNull(testerUC);
+		assertNotNull(testerUS);
+	}
 	
 	@Test
 	public void addStudentTest() {
-		testerUS = new StudentService();
-		testerUS.addStudent(testerStudent1);
-		testerUS.addStudent(testerStudent2);
-		testerUS.addStudent(testerStudent3);
-		assertEquals(3, testerUS.getAllStudents().size());
+		when(testerUS.addStudent(testerStudent1)).thenReturn("Added");
+		assertEquals("Added", testerUS.addStudent(testerStudent1));
 	}
 	
 	@Test
 	public void getStudentTest() {
-		testerStudent1 = new Student("123456","Bill","lastName");
-		testerUS = new StudentService();
-		testerUS.addStudent(testerStudent1);
-		assertFalse(testerUS.getStudent("123456").toString().isEmpty());
+		when(testerUS.getStudent(testerId)).thenReturn(testerStudent1);
+		assertEquals(testerStudent1, testerUS.getStudent(testerId));
 	}
 	
 	@Test
 	public void getStudentNameTest() {
-		testerStudent1 = new Student("123456","Bill","lastName");
-		testerUS = new StudentService();
-		testerUS.addStudent(testerStudent1);
-		assertEquals("Bill", testerUS.getStudent("123456"));
+		when(testerUS.getStudent("123456")).thenReturn(testerStudent1);
+		assertEquals(testerStudent1, testerUS.getStudent("123456"));
 	}
 	
 	@Test
 	public void updateStudentTest() {
-		testerStudent1 = new Student("123456","Bill","lastName");
-		testerStudent2 = new Student("123456","Shetern","lastName");
-		testerUS = new StudentService();
-		testerUS.addStudent(testerStudent1);
-		testerUS.updateStudent(testerStudent2);
-		assertEquals("Shetern", testerUS.getStudent("123456"));
+		when(testerUS.updateStudent(testerStudent1)).thenReturn("Shetern");
+		assertEquals("Shetern", testerUS.updateStudent(testerStudent1));
 	}
 	
 	@Test
 	public void deleteStudentTest() {
-		testerStudent1 = new Student("123456","Bill","lastName");
-		testerUS = new StudentService();
-		testerUS.addStudent(testerStudent1);
-		testerUS.deleteStudent(testerId);
-		assertTrue(testerUS.getAllStudents().isEmpty());
+		when(testerUS.deleteStudent(testerId)).thenReturn("Deleted");
+		assertEquals("Deleted",testerUS.deleteStudent(testerId));
 	}
 }
