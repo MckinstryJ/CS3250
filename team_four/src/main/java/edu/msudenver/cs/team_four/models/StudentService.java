@@ -21,15 +21,21 @@ public class StudentService {
 		return stuRepo.findOne(id);
 	}
 	
-	public void addStudent(Student Student) {
+	public String addStudent(Student Student) {
+		String result;
 		stuRepo.save(Student);
+		return  result = Student + "added to database.";
 	}
 	
-	public void updateStudent(Student Student) {
+	public String updateStudent(Student Student) {
+		String result;
 		stuRepo.save(Student);
+		return result = Student + "updated";
 	}
 	
-	public void deleteStudent(String id) {
+	public String deleteStudent(String id) {
+		String result;
 		stuRepo.delete(id);
+		return result = "Student with id " + id + " deleted.";
 	}
 }

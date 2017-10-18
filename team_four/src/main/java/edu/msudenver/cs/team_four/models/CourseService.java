@@ -22,16 +22,22 @@ public class CourseService {
 		return courRepo.findOne(id);
 	}
 	
-	public void addCourse(Courses cour) {
+	public String addCourse(Courses cour) {
+		String result;
 		courRepo.save(cour);
+		return  result = cour + " added.";
 	}
 	
-	public void updateCourse(Courses cour) {
+	public String updateCourse(Courses cour) {
+		String result;
 		courRepo.save(cour);
+		return result = cour + " updated.";
 	}
 	
-	public void deleteCourse(String id) {
+	public String deleteCourse(String id) {
+		String result;
 		courRepo.delete(id);
+		return result = "Course with id " + id + " deleted.";
 	}
 
 }

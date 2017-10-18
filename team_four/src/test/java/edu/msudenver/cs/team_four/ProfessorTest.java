@@ -28,4 +28,6 @@ public class ProfessorTest {
 		profTest.setLastName("Rage");
 		assertEquals("Rage", profTest.getLastName());
 	}
+	
+	
 }
