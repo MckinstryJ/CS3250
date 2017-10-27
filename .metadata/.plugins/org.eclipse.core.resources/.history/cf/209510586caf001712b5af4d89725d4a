@@ -1,6 +1,0 @@
-$(document).ready(function(){
-	$(".insertRow").on('click',function(){
-    	var data="<tr><td><input type='text' name='id'/></td> <td><input type='text' name='name'/></td> <td><button id="insertRow"></button></td></tr>";
-        $('table').append(data);
-	});
-});

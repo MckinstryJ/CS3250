@@ -1,8 +1,0 @@
-$(document).ready(function(){
-      var i=1;
-     $("#show_row").click(function(){
-      	$('#addr1').html("<td><input name='id' type='text' placeholder='Professor ID' class='form-control input-md'</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><button  name='option' class='form-control btn btn-success'>Save</button></td>");
-
-      	$('#tab_logic').refresh();
-  	});
-});

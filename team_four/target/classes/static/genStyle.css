@@ -6,3 +6,7 @@
 #lastColTable {
 	width: 100px;
 }
+
+table, th, td {
+	text-align: center;
+}

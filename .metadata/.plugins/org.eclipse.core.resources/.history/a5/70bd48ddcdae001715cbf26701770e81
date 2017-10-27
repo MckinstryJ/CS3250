@@ -1,7 +1,0 @@
-$(document).ready(function(){
-     $("#show_row").click(function(){
-      	$('#showStu').html("<td><input name='id' type='text' placeholder='Student ID' class='form-control input-md' /></td><td><input name='name' type='text' placeholder='Student Name' class='form-control input-md'  /> </td><td><button  name='option' class='form-control btn btn-success'>Save</button></td><td><button  name='option' class='form-control btn btn-danger'>Cancel</button></td>");
-
-      	$('#tab_logic').refresh();
-  	});
-});
