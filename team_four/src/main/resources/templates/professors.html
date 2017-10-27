@@ -48,9 +48,9 @@
 				<td th:text="${professor.id}"></td>
 				<td th:text="${professor.firstName} + ' ' + ${professor.lastName}"></td>
 				<td>
-					<button class="btn btn-primary" data-toggle="modal" data-target="#upModalNorm" style="float:left;width:45%">Update</button>
+					<button class="btn btn-primary" data-toggle="modal" data-target="#upModalNorm" style="width:75px">Update</button>
 					<form method="POST" th:action="@{/deletePro(proId=${professor.id})}">
-						<button type="submit" class="btn btn-danger" style="float:right;width:45%">Delete</button>
+						<button type="submit" class="btn btn-danger" style="width:75px">Delete</button>
 					</form>					
 				</td>
 				<div class="modal fade" id="upModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
