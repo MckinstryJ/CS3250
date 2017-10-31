@@ -1,0 +1,129 @@
+<html>
+<body>
+<table class="table table-bordered table-hover bg-info" th:fragment="courseTable">
+		<thead>
+			<tr>
+				<th> CRN </th>
+				<th> Course </th>
+				<th> Pre-Req's </th>
+				<th> Credits </th>
+				<th> Day </th>
+				<th> Time </th>
+				<th> Semester </th>
+				<th> Options </th>
+				<th id="lastColTable">
+					<button class="btn btn-warning" data-toggle="modal" data-target="#myModalNorm">Add New</button> 
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="course : ${courses}">
+				<td th:text="${course.coursenumber}"></td>
+				<td th:text="${course.courseName}"></td>
+				<td th:text="${course.prereqs}"></td>
+				<td th:text="${course.credits}"></td>
+				<!--Add day, time, semester when the building class has been built-->
+				<td>
+					<button class="btn btn-primary" data-toggle="modal" data-target="#upModalNorm" style="width:75px">Update</button>
+						<form method="POST" th:action="@{/deleteCourse(courseId=${course.coursenumber})}">
+						<button type="submit" class="btn btn-danger" style="width:75px">Delete</button>
+					</form>					
+				</td>
+				<div class="modal fade" id="upModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    				<div class="modal-dialog">
+	     			   <div class="modal-content">
+    	        		<!-- Modal Header -->
+        	    		<div class="modal-header">
+            	    		<button type="button" class="close" data-dismiss="modal">
+	                       		<span aria-hidden="true">&times;</span>
+	                       		<span class="sr-only">Close</span>
+                			</button>
+    		            	<h4 class="modal-title" id="myModalLabel">
+            	        	Update Course
+                			</h4>
+            			</div>
+            
+            			<!-- Modal Body -->
+            			<div class="modal-body">
+                			<form id="frm" th:action="@{/updateCourse}" th:object="${course}" method="post">
+                	  		<div class="form-group">
+                	    		<label class="control-label">CRN</label>
+                	      		<input type="text" th:value="${course.coursenumber}" id="coursenumber" name="coursenumber" class="form-control" placeholder="Enter CRN (ex 123456)" />
+                	  		</div>
+                	  		<div class="form-group">
+                	    		<label class="control-label">Course Name</label>
+                	      		<input type="text" th:value="${course.courseName}" id="courseName" name="courseName" class="form-control" placeholder="Enter Name" />
+                	  		</div>
+                	  		<div class="form-group">
+                	    		<label class="control-label">Course Pre-Req</label>
+                	      		<input type="text" th:value="${course.prereqs}" id="prereqs" name="prereqs" class="form-control" placeholder="Enter Pre-Req's (CRN)" />
+                	  		</div>
+                	  		<div class="form-group">
+                	    		<label class="control-label">Course Co-Req</label>
+                	      		<input type="text" th:value="${course.coreqs}" id="coreqs" name="coreqs" class="form-control" placeholder="Enter Co-Req's (CRN)" />
+                	  		</div>
+                	  		<div class="form-group">
+                	    		<label class="control-label">Department</label>
+                	      		<input type="text" th:value="${course.department}" id="department" name="department" class="form-control" placeholder="Enter Department (ex: MTH)" />
+                	  		</div>
+                	  		<div class="form-group">
+                	    		<label class="control-label">Description</label>
+                	      		<input type="text" th:value="${course.description}" id="description" name="description" class="form-control" placeholder="Enter Description" />
+                	  		</div>
+                	  		<div class="form-group">
+                	    		<label class="control-label">Learning Objectives</label>
+                	      		<input type="text" th:value="${course.learningObjectives}" id="learningObjectives" name="leraningObjectives" class="form-control" placeholder="Enter Learning Objectives" />
+                	  		</div>
+                	  		<div class="form-group">
+                	    		<label class="control-label">Course Credit</label>
+                	      		<input type="text" th:value="${course.credits}" id="credits" name="credits" class="form-control" placeholder="Enter Credit amount (ex: 4)" />
+                	  		</div>
+                	  		<div class="form-group">
+							   <label class="control-label">Day of Class</label>
+							   <label class="radio-inline"><input type="radio" name="optradio">M/W</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">T/Th</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">Fri</input></label>
+							  </div>
+							  <div class="form-group">
+							   <label class="control-label">Time of Class</label>
+							   <label class="radio-inline"><input type="radio" name="optradio">8am</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">10am</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">12pm</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">2pm</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">4pm</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">6pm</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">8pm</input></label>
+							  </div> 
+							  <div class="form-group">
+							   <label class="control-label">Building of Class</label>
+							   <label class="radio-inline"><input type="radio" name="optradio">Plaza</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">North</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">West</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">Science</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">App Man</input></label>
+							  </div> 
+							  <div class="form-group">
+							   <label class="control-label">Room of Class</label>
+							   <label class="radio-inline"><input type="radio" name="optradio">Rm 100</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">Rm 101</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">Rm 102</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">Rm 103</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">Rm 104</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">Rm 105</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">Rm 106</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">Rm 107</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">Rm 108</input></label>
+							   <label class="radio-inline"><input type="radio" name="optradio">Rm 109</input></label>
+							  </div>  
+                	  		<button type="submit" class="btn btn-success">Submit</button>
+               		  		<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                			</form>
+            			</div>
+       		 		</div>
+		    	</div>
+			</div>
+			</tr>	
+		</tbody>
+	</table>
+</body>
+</html>
