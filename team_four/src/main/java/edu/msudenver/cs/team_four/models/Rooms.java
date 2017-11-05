@@ -1,41 +1,99 @@
 package edu.msudenver.cs.team_four.models;
 
 import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Rooms {
+		@Id
+	    @GeneratedValue(strategy = GenerationType.AUTO)
+	    private String id;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+	    @Column
+	    private int roomNumber;
+	    private int capacity;
+	    private Buildings building;
+	    public Rooms() {
+	        this.roomNumber = 0;
+	    }
 
-    private String roomSize;
+	    public Rooms(final int roomNumber, final int roomCapacity, final Buildings building) {
 
-    @Column(unique = true)
-    private String roomNumber;
+	        if (roomNumber < 0) {
+	            throw new IllegalArgumentException("Stay positive");
+	        } else {
+	            this.roomNumber = roomNumber;
+	        }
 
-    public Long getId(){
-        return id;
-    }
+	        if (roomCapacity < 0) {
+	            throw new IllegalArgumentException("Stay positive");
+	        } else {
+	            capacity = roomCapacity;
+	        }
 
-    public String getRoomSize() {
-        return roomSize;
-    }
+	        if (building == null) {
+	            throw new IllegalArgumentException("Building cannot be null");
+	        } else {
+	            this.building = building;
+	        }
+	    }
 
-    public void setRoomSize(String roomSize) {
+	    public void setId(final String id) {
+	        this.id = id;
+	    }
 
-        this.roomSize = roomSize;
-    }
+	    public String getId() {
+	        return id;
+	    }
 
-    public String getRoomNumber() {
+	    public void setRoomNumber(final int roomNumber)
+	            throws IllegalArgumentException {
+	        if (roomNumber < 0) {
+	            throw new IllegalArgumentException("Stay positive");
+	        } else {
+	            this.roomNumber = roomNumber;
+	        }
+	    }
 
-        return roomNumber;
-    }
+	    
+	    public void setRoomCapacity(final int capacity)
+	            throws IllegalArgumentException {
+	        if (capacity < 0) {
+	            throw new IllegalArgumentException("Stay positive");
+	        } else {
+	            this.capacity = capacity;
+	        }
+	    }
 
-    public void setRoomNumber(String roomNumber) {
+	   
+	    public void setBuilding(final Buildings building)
+	            throws IllegalArgumentException {
+	        if (building == null) {
+	            throw new IllegalArgumentException("Building cannot be null");
+	        } else {
+	            this.building = building;
+	        }
+	    }
 
-        this.roomNumber = roomNumber;
-    }
+	    
+	    public int getRoomNumber() {
+	        return roomNumber;
+	    }
 
-}
+	   
+	    public int getRoomCapacity() {
+	        return capacity;
+	    }
 
+	    public Buildings getBuilding() {
+	        return building;
+	    }
+
+	    @Override
+	    public String toString() {
+	        return "Id: " + id + ", Room Number: " + roomNumber;
+	    }
+	}
