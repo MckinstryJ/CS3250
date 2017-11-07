@@ -9,7 +9,7 @@ public class StudentControllerTest {
 	/*
 	 * Leaving this alone for now...
 	 */
-	@Test
+	@Test  (expected = NullPointerException.class)
 	public void getallStudentsTest() {
 		
 	}
