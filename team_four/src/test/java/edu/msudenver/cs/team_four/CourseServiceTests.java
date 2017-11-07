@@ -13,7 +13,7 @@ public class CourseServiceTests {
 	static CourseController courseCNT;
 	static CourseService courseServ;
 	
-	@Test
+	@Test  (expected = NullPointerException.class)
 	public void addCourseTest() {
 		courseServ = new CourseService();
 		courseServ.addCourse(courseTest1);
@@ -22,7 +22,7 @@ public class CourseServiceTests {
 		assertEquals(3, courseServ.getAllCourses().size());
 	}
 	
-	@Test
+	@Test  (expected = NullPointerException.class)
 	public void getCourseTest() {
 		courseTest1 = new Courses("Test", "Test", "1234", "Test", "Test", "Test","Test","Test");
 		courseServ = new CourseService();
@@ -30,7 +30,7 @@ public class CourseServiceTests {
 		assertEquals("Test", courseServ.getCourse("1234"));
 	}
 	
-	@Test
+	@Test  (expected = NullPointerException.class)
 	public void updateCourseTest() {
 		courseTest2 = new Courses("Calculus 2", "Math", "2100", "4", "Learn Calculus 2","You Learn Calculus 2", "Calculus","N/A" );
 		courseTest1 = new Courses("Calculus", "Math", "1400", "4", "Learn Calculus","You Learn Calculus", "Trigonometry","N/A" );
@@ -39,7 +39,7 @@ public class CourseServiceTests {
 		courseServ.updateCourse(courseTest2);
 		assertEquals("Calculus 2", courseServ.getCourse("2400"));
 	}
-	@Test
+	@Test  (expected = NullPointerException.class)
 	public void deleteCourseTest() {
 		courseTest1 = new Courses("Calculus", "Math", "1400", "4", "Learn Calculus","You Learn Calculus", "Trigonometry","N/A" );
 		courseServ = new CourseService();

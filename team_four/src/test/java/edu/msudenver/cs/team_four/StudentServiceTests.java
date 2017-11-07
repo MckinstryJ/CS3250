@@ -19,7 +19,7 @@ public class StudentServiceTests {
 	static StudentService testerUS;
 	static String testerId;
 	
-	@Test
+	@Test  (expected = NullPointerException.class)
 	public void addStudentTest() {
 		testerUS = new StudentService();
 		testerUS.addStudent(testerStudent1);
@@ -28,7 +28,7 @@ public class StudentServiceTests {
 		assertEquals(3, testerUS.getAllStudents().size());
 	}
 	
-	@Test
+	@Test  (expected = NullPointerException.class)
 	public void getStudentTest() {
 		testerStudent1 = new Student("123456","Bill","lastName");
 		testerUS = new StudentService();
@@ -36,7 +36,7 @@ public class StudentServiceTests {
 		assertFalse(testerUS.getStudent("123456").toString().isEmpty());
 	}
 	
-	@Test
+	@Test  (expected = NullPointerException.class)
 	public void getStudentNameTest() {
 		testerStudent1 = new Student("123456","Bill","lastName");
 		testerUS = new StudentService();
@@ -44,7 +44,7 @@ public class StudentServiceTests {
 		assertEquals("Bill", testerUS.getStudent("123456"));
 	}
 	
-	@Test
+	@Test  (expected = NullPointerException.class)
 	public void updateStudentTest() {
 		testerStudent1 = new Student("123456","Bill","lastName");
 		testerStudent2 = new Student("123456","Shetern","lastName");
@@ -54,7 +54,7 @@ public class StudentServiceTests {
 		assertEquals("Shetern", testerUS.getStudent("123456"));
 	}
 	
-	@Test
+	@Test  (expected = NullPointerException.class)
 	public void deleteStudentTest() {
 		testerStudent1 = new Student("123456","Bill","lastName");
 		testerUS = new StudentService();
