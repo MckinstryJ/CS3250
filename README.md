@@ -1,4 +1,5 @@
-# Updated Banner - CS3250 [![Coverage Status](https://coveralls.io/repos/github/MckinstryJ/CS3250/badge.svg?branch=master)](https://coveralls.io/github/MckinstryJ/CS3250?branch=master)
+# Updated Banner - CS3250 [![Build Status](https://travis-ci.org/MckinstryJ/CS3250.svg?branch=master)](https://travis-ci.org/MckinstryJ/CS3250.svg?branch=master) 
+[![Coverage Status](https://coveralls.io/repos/github/MckinstryJ/CS3250/badge.svg?branch=master)](https://coveralls.io/github/MckinstryJ/CS3250?branch=master)
 
 ## Collaboration Team
 
