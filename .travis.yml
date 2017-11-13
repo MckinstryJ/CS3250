@@ -1,8 +1,10 @@
 language: java
 jdk:
 - oraclejdk7
+before_install:
+  - chmod +x mvnw
 install:
-  - mvn -N io.takari:maven:wrapper
+  - ./mvnw -N io.takari:maven:wrapper
   - ./mvnw install -DskipTests=false -Dmaven.javadoc.skip=false -B -V
 script:
   - mvn test
