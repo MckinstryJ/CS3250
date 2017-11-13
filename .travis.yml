@@ -1,10 +1,11 @@
 language: java
-sudo: false
-jdk:
-- oraclejdk8
-install:
-- mvn -N io.takari:maven:wrapper
-- ./mvnw install -DskipTests=false -Dmaven.javadoc.skip=false -B -V
-script: "mvn cobertura:cobertura"
+env:
+  global:
+    - COVERALLS_REPO_TOKEN=hoeYAVnEM07Y2R3VYLyqXWjSy5D77D8Zu
+    - CI_NAME=travis-ci
+branches:
+    only:
+        - master
+        - development
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+- ./gradlew jacocoTestReport coveralls
