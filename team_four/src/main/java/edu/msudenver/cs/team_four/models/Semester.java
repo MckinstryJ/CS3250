@@ -10,6 +10,7 @@ public class Semester {
 	private int endDate;
 	private String startMonth = null;
 	private String endMonth = null;
+	private String Year = null;
 	
     @OneToOne
     @JoinColumn(name = "section_id")
@@ -65,7 +66,7 @@ public class Semester {
     }
 
     public void setStartDate(int startDate) {
-        this.startDay = startDate;
+        this.startDate = startDate;
     }
 
     public String getEndMonth() {

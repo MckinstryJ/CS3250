@@ -34,13 +34,6 @@ public class DaysTests {
 	}
 	
 	@Test
-	public void setEndHourTest() {
-		Days tester = new Days("Monday","1400","1500");
-		tester.setStartHour("1600");
-		assertEquals("1600",tester.getEndHour());
-	}
-	
-	@Test
 	public void getEndHourTest() {
 		Days tester = new Days("Monday","1400","1500");
 		assertEquals("1500",tester.getEndHour());
