@@ -1,8 +1,6 @@
 language: java
 jdk:
 - oraclejdk7
-install:
-- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script:
   - mvn covertura:cobertura
 after_success:
