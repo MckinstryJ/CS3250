@@ -21,33 +21,5 @@ import edu.msudenver.cs.team_four.models.CourseService;
 import edu.msudenver.cs.team_four.models.Courses;
 
 public class CourseControllerTest {
-	@Autowired
-	static CourseController courseContTest = new CourseController();
-	@Autowired
-	static CourseService courseServ = new CourseService();
-	
-	@Test (expected = NullPointerException.class)
-	@RequestMapping(value="/courses", method=RequestMethod.POST)
-	public void subTest() {
-		Courses course1 = new Courses("Test","Test","Test","Test","Test","Test","Test","Test");
-		Model model = null;
-		assertEquals("courses", courseContTest.courseSubmit(course1, model));
-	}
-	@Test (expected = NullPointerException.class)
-	@RequestMapping(value ="/courses", method = RequestMethod.GET)
-	public void listTest() {
-		Model model = null;
-		Courses course1 = new Courses("Test","Test","Test","Test","Test","Test","Test","Test");
-		courseContTest.courseSubmit(course1, model);
-		assertEquals("courses", courseContTest.list(model));
-	}
-	@Test (expected = NullPointerException.class)
-	@RequestMapping(method=RequestMethod.POST, value="/deleteCourse")
-	public void deleteCourseTest() {
-		Model model = null;
-		Courses course1 = new Courses("Test","Test","Test","Test","Test","Test","Test","Test");
-		courseContTest.courseSubmit(course1, model);
-		assertEquals("courses", courseContTest.deleteCourse("Test", model));
-	}
 
 }

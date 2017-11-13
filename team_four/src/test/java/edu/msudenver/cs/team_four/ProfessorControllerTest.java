@@ -16,34 +16,7 @@ import edu.msudenver.cs.team_four.models.ProfessorController;
 import edu.msudenver.cs.team_four.models.ProfessorService;
 
 public class ProfessorControllerTest {
-	@Autowired
-	static ProfessorController proContTest = new ProfessorController();
-	@Autowired
-	static ProfessorService proServ = new ProfessorService();
 	
-	@Test
-	@RequestMapping(value="/professors", method=RequestMethod.POST)
-	public void subTest() {
-		Model model = null;
-		Professor pro = new Professor("1234","Willis","lastName");
-		assertEquals("professors", proContTest.professorSubmit(pro, model));
-	}
-	@Test
-	@RequestMapping(value ="/professors", method = RequestMethod.GET)
-	public void listTest() {
-		Model model = null;
-		Professor pro = new Professor("1234","Willis","lastName");
-		proContTest.professorSubmit(pro, model);
-		assertEquals("professors", proContTest.list(model));
-	}
-	@Test
-	@RequestMapping(method=RequestMethod.POST, value="/deleteProfessor")
-	public void deleteCourseTest() {
-		Model model = null;
-		Professor pro = new Professor("1234","Willis","lastName");
-		proContTest.professorSubmit(pro, model);
-		assertEquals("professors", proContTest.deleteProfessor("1234", model));
-	}
 
 }
 
