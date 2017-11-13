@@ -1,12 +1,10 @@
 language: java
 jdk:
 - oraclejdk7
-before_install:
-  - chmod +x mvnw
 install:
   - ./mvnw -N io.takari:maven:wrapper
   - ./mvnw install -DskipTests=false -Dmaven.javadoc.skip=false -B -V
 script:
-  - mvn test
+  - mvn covertura:cobertura
 after_success:
   - mvn clean cobertura:cobertura coveralls:report
