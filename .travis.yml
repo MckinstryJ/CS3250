@@ -1,8 +1,8 @@
 language: java
 sudo: false		
- jdk:	
-   -oraclejdk8
- install:
-   -mvn -N io.takari:maven:wrapper
-   -./mvnw install -DskipTests=false -Dmaven.javadoc.skip=false -B -V
- script: "mvn cobertura:cobertura"
+jdk:	
+   - oraclejdk8
+install:
+   - mvn -N io.takari:maven:wrapper
+   - ./mvnw install -DskipTests=false -Dmaven.javadoc.skip=false -B -V
+script: "mvn cobertura:cobertura"
