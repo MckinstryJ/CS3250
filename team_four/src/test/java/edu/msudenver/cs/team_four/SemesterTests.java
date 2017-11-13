@@ -28,45 +28,38 @@ public class SemesterTests {
 	@Test
 	public void startDateTest() {
 		Semester tester = new Semester(section);
-		tester.setStartDay(12);
-		assertEquals(12,tester.getStartDay());
+		tester.setStartDate(12);
+		assertEquals(12,tester.getStartDate());
 	}
 	
 	@Test
 	public void endDateTest() {
-		Semester tester = new Semester(section,"Spring 2018","January", 15 ,"May", 5);
-		tester.setEndDay(12);
-		assertEquals(12,tester.getEndDay());
+		Semester tester = new Semester(5, 5, "January", "May", "2018");
+		tester.setEndDate(12);
+		assertEquals(12,tester.getEndDate());
 	}
 	
 	@Test
 	public void startMonthTest() {
-		Semester tester = new Semester(section, "Spring 2018" ,"January", 15, "May", 5);
+		Semester tester = new Semester(5, 5, "January", "May", "2018");
 		tester.setStartMonth("February");
 		assertEquals("February",tester.getStartMonth());
 	}
 	
 	@Test
 	public void endMonthTest() {
-		Semester tester = new Semester(section, "Spring 2018" ,"January", 15, "May", 5);
+		Semester tester = new Semester(5, 5, "January", "May", "2018");
 		tester.setEndMonth("February");
 		assertEquals("February",tester.getEndMonth());
 	}
 	
 	@Test
 	public void yearTest() {
-		Semester tester = new Semester(section, id, "Spring" ,"January", 15, "May", 5);
+		Semester tester = new Semester(5, 5, "January", "May", "2018");
 		Long newId = new Long("2017");
 		Long expected = new Long("2017");
 		tester.setId(newId);
 		assertEquals(expected,tester.getId());
-	}
-	
-	@Test
-	public void getNameTest() {
-		Semester tester = new Semester(section, "Spring 2018" ,"January", 15, "May", 5);
-		tester.setSemesterName("Fall 2018");
-		assertEquals("Fall 2018",tester.getSemesterName());
 	}
 	
 	@Test
