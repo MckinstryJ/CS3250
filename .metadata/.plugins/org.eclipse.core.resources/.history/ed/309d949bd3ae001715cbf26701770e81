@@ -1,6 +1,0 @@
-$(document).ready(function(){
-    $("#addNew").click(function(){
-        $(".topRow").toggle();
-        $("#addNew").text('Cancel');
-    });
-});

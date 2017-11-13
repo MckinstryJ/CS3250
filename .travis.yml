@@ -1,4 +1,3 @@
-before_install: cd team_four
 language: java
 sudo: false
 jdk:
