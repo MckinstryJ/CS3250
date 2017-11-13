@@ -1,17 +1,16 @@
 package edu.msudenver.cs.team_four.models;
 
 import javax.persistence.*;
+import javax.persistence.OneToOne;
 public class Semester {
-	
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-    private String semesterName;
-    private String startMonth;
-    private int startDay;
-    private String endMonth;
-    private int endDay;
-
+	private int startDate;
+	private int endDate;
+	private String startMonth = null;
+	private String endMonth = null;
+	
     @OneToOne
     @JoinColumn(name = "section_id")
     private Section section;
@@ -19,41 +18,30 @@ public class Semester {
     public Semester() {
     	this.section = null;
     	this.id = Long.valueOf(0);
-    	this.semesterName = "TBD";
     	this.startMonth = "TBD";
-    	this.startDay = 0;
+    	this.startDate = 0;
     	this.endMonth = "TBD";
-    	this.endDay = 0;
+    	this.endDate = 0;
     }
 
     public Semester(Section section) {
     	this.section = section;
     	this.id = Long.valueOf(0);
-    this.semesterName = "TBD";
-    this.startMonth = "TBD";
-    	this.startDay = 0;
+	this.startMonth = "TBD";
+    	this.startDate = 0;
     	this.endMonth = "TBD";
-    	this.endDay = 0;
+    	this.endDate = 0;
     }
-    
-    public Semester(Section section, String semesterName, String startMonth, int startDay, String endMonth, int endDay) {
-    	this.section = section;
-    	this.id = Long.valueOf(0);
-    this.semesterName = semesterName;
-    this.startMonth = startMonth;
-    	this.startDay = startDay;
-    	this.endMonth = endMonth;
-    	this.endDay = endDay;
-    }
-
-    public Semester(Section section, Long id, String semesterName, String startMonth, int startDay, String endMonth, int endDay) {
-    	this.section = section;
-    	this.id = Long.valueOf(0);
-    this.semesterName = semesterName;
-    this.startMonth = startMonth;
-    	this.startDay = startDay;
-    	this.endMonth = endMonth;
-    	this.endDay = endDay;
+    public Semester(int startDate, int endDate, String startMonth, String endMonth, String Year) 
+    {
+	super();
+	this.id = Long.valueOf(0);
+	this.startDate = 0;
+	this.endDate = 0;
+	this.startMonth = startMonth;
+	this.endMonth = endMonth;
+	this.Year = Year;
+ 
     }
 
     public Long getId() {
@@ -63,29 +51,21 @@ public class Semester {
     public void setId(Long id) {
     	this.id = id;
     }
-
-    public String getSemesterName() {
-        return semesterName;
-    }
-
-    public void setSemesterName(String semesterName) {
-        this.semesterName = semesterName;
-    }
-
+	
     public String getStartMonth() {
         return startMonth;
     }
-
+	
     public void setStartMonth(String startMonth) {
         this.startMonth = startMonth;
     }
 
-    public int getStartDay() {
-        return startDay;
+    public int getStartDate() {
+        return startDate;
     }
 
-    public void setStartDay(int startDay) {
-        this.startDay = startDay;
+    public void setStartDate(int startDate) {
+        this.startDay = startDate;
     }
 
     public String getEndMonth() {
@@ -96,11 +76,19 @@ public class Semester {
         this.endMonth = endMonth;
     }
 
-    public int getEndDay() {
-        return endDay;
+    public int getEndDate() {
+        return endDate;
     }
 
-    public void setEndDay(int endDay) {
-        this.endDay = endDay;
+    public void setEndDate(int endDate) {
+        this.endDate = endDate;
+    }
+	
+    public String getYear() {
+	    return Year;
+    }
+	
+    public void setYear(String Year) {
+	    this.Year = Year;
     }
 }
