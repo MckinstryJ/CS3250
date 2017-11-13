@@ -1,8 +1,6 @@
 language: java
 sudo: false
-install:
-  - mvn test-compile 
 script:
-  - mvn test jacoco:report
+  - mvn cobertura:cobertura coveralls:cobertura
 after_success:
-  - mvn coveralls:report
+  - mvn clean cobertura:cobertura coveralls:cobertura
