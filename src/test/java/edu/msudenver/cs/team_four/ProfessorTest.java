@@ -12,6 +12,11 @@ public class ProfessorTest {
 	static Professor profTest = new Professor("5678" , "Billy","Mays");
 	
 	@Test
+	public void testConstructor() {
+		Professor proT = new Professor();
+	}
+	
+	@Test
 	public void idTest() {
 		profTest.setId("1234");
 		assertEquals("1234", profTest.getId());

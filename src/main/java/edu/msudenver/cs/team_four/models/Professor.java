@@ -45,9 +45,4 @@ public class Professor {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
-	public void getName() {
-		getFirstName();
-		getLastName();
-	}
 }

@@ -9,7 +9,13 @@ import edu.msudenver.cs.team_four.models.*;
 public class CoursesTest {
 	
 	static Courses courseTester = new Courses("Bork" , "Bork Bork", "Meep","Mana manah", "Doop dee a doop doop"
-												,"Doop doo da doo", "Miss Piggy", "Kermit");
+												,"Doop doo da doo", "Miss Piggy", "Kermit", "a", "b", "c", "d"
+												,"e", "f","g");
+	
+	@Test
+	public void constructorTest() {
+		Courses cour = new Courses();
+	}
 	
 	@Test
 	public void setCRNTest() {
@@ -57,5 +63,47 @@ public class CoursesTest {
 	public void setCourseLearn() {
 		courseTester.setLearningObjectives("Learn computer shit");
 		assertEquals("Learn computer shit", courseTester.getLearningObjectives());
+	}
+	
+	@Test
+	public void setCourseSemester() {
+		courseTester.setSemester("Spring");
+		assertEquals("Spring", courseTester.getSemester());
+	}
+	
+	@Test
+	public void setCourseStartDate() {
+		courseTester.setStartDate("Spring");
+		assertEquals("Spring", courseTester.getStartDate());
+	}
+	
+	@Test
+	public void setCourseEndDate() {
+		courseTester.setEndDate("Spring");
+		assertEquals("Spring", courseTester.getEndDate());
+	}
+	
+	@Test
+	public void setCourseBuilding() {
+		courseTester.setBuilding("Spring");
+		assertEquals("Spring", courseTester.getBuilding());
+	}
+	
+	@Test
+	public void setCourseRoom() {
+		courseTester.setRoom("Spring");
+		assertEquals("Spring", courseTester.getRoom());
+	}
+	
+	@Test
+	public void setCourseDay() {
+		courseTester.setDay("Spring");
+		assertEquals("Spring", courseTester.getDay());
+	}
+	
+	@Test
+	public void setCourseTime() {
+		courseTester.setTime("Spring");
+		assertEquals("Spring", courseTester.getTime());
 	}
 }
