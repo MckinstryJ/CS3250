@@ -78,43 +78,63 @@
                 	    		<label class="control-label">Course Credit</label>
                 	      		<input type="text" th:value="${course.credits}" id="credits" name="credits" class="form-control" placeholder="Enter Credit amount (ex: 4)" />
                 	  		</div>
-                	  		<div class="form-group">
-							   <label class="control-label">Day of Class</label>
-							   <label class="radio-inline"><input type="radio" name="optradio">M/W</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">T/Th</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">Fri</input></label>
-							  </div>
-							  <div class="form-group">
-							   <label class="control-label">Time of Class</label>
-							   <label class="radio-inline"><input type="radio" name="optradio">8am</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">10am</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">12pm</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">2pm</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">4pm</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">6pm</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">8pm</input></label>
-							  </div> 
-							  <div class="form-group">
-							   <label class="control-label">Building of Class</label>
-							   <label class="radio-inline"><input type="radio" name="optradio">Plaza</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">North</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">West</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">Science</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">App Man</input></label>
-							  </div> 
-							  <div class="form-group">
-							   <label class="control-label">Room of Class</label>
-							   <label class="radio-inline"><input type="radio" name="optradio">Rm 100</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">Rm 101</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">Rm 102</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">Rm 103</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">Rm 104</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">Rm 105</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">Rm 106</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">Rm 107</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">Rm 108</input></label>
-							   <label class="radio-inline"><input type="radio" name="optradio">Rm 109</input></label>
-							  </div>  
+                	  		<div class="btn-group dropup">
+                	  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                	  			Days
+                	  			<span class="caret"></span>
+                	  			</button>
+                	  			<ul class="dropdown-menu">
+	  								<li><a href="#">M/W</a></li>
+  									<li><a href="#">T/Th</a></li>
+  									<li><a href="#">Fri</a></li>
+  								</ul>
+							</div>
+							<div class="btn-group dropup">
+                	  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                	  			Times
+                	  			<span class="caret"></span>
+                	  			</button>
+                	  			<ul class="dropdown-menu">
+	  								<li><a href="#">8am</a></li>
+  									<li><a href="#">10pm</a></li>
+  									<li><a href="#">12pm</a></li>
+  									<li><a href="#">2pm</a></li>
+  									<li><a href="#">4pm</a></li>
+  									<li><a href="#">6pm</a></li>
+  									<li><a href="#">8pm</a></li>
+  								</ul>
+							</div>
+							<div class="btn-group dropup">
+                	  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                	  			Buildings
+                	  			<span class="caret"></span>
+                	  			</button>
+                	  			<ul class="dropdown-menu">
+	  								<li><a href="#">Plaza</a></li>
+  									<li><a href="#">North</a></li>
+  									<li><a href="#">West</a></li>
+  									<li><a href="#">Science</a></li>
+  									<li><a href="#">Applied Manu.</a></li>
+  								</ul>
+							</div>
+							<div class="btn-group dropup">
+                	  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                	  			Times
+                	  			<span class="caret"></span>
+                	  			</button>
+                	  			<ul class="dropdown-menu">
+	  								<li><a href="#">Rm 100</a></li>
+  									<li><a href="#">Rm 101</a></li>
+  									<li><a href="#">Rm 103</a></li>
+  									<li><a href="#">Rm 104</a></li>
+  									<li><a href="#">Rm 105</a></li>
+  									<li><a href="#">Rm 106</a></li>
+  									<li><a href="#">Rm 107</a></li>
+  									<li><a href="#">Rm 108</a></li>
+  									<li><a href="#">Rm 109</a></li>
+  								</ul>
+							</div>
+							<br /> <br />
                 	  		<button type="submit" class="btn btn-success">Submit</button>
                		  		<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 			</form>
