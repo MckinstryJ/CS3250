@@ -15,21 +15,19 @@ public class Courses {
 	public String description;
 	public String learningObjectives;
 	public String credits;
-	private String semester; //Fall, Spring, Summer
-	private String startDate; //Fall - Aug 15th, Spring - Jan 15th, Summer - June 5th
-	private String endDate; //Fall - Dec 15th, Spring - May 15th, Summer - Aug 5th
-	private String building; //North, East, South, West, Science, Plaza
-	private String room; // 010 to 590
-	private String day; //MW, TTh, F
-	private String time; //8am to 8pm at 2 hour increments
-	
+	private String[] semester = {"Fall", "Spring", "Summer"}; 
+	private String[] dates = {"Aug 15th - Dec 15th", "Jan 15th - May 15th", "June 5th - Aug 5th"}; 
+	private String[] building = {"North", "East", "South", "West", "Science", "Plaze"}; 
+	private String[] room = {"100","110","120","130","140","150","160","170","180","190"}; // 010 to 590
+	public String[] day = {"MW", "TTh", "F"}; 
+	private String[] time = {"8am", "10am", "12pm", "2pm", "4pm", "6pm", "8pm"}; 
+
 	public Courses() {
 		
 	}
 	
 	public Courses(String courseName, String department, String coursenumber, String credits, String description, 
-					String learningObjectives, String prereqs, String coreqs, String semester, String startDate, 
-					String endDate, String building, String room, String day, String time) {
+					String learningObjectives, String prereqs, String coreqs) {
 						this.courseName = courseName;
 						this.department = department;
 						this.coursenumber = coursenumber;
@@ -38,13 +36,6 @@ public class Courses {
 						this.learningObjectives = learningObjectives;
 						this.prereqs = prereqs;
 						this.coreqs = coreqs;
-						this.semester = semester;
-						this.startDate = startDate;
-						this.endDate = endDate;
-						this.building = building;
-						this.room = room;
-						this.day = day;
-						this.time = time;
 					}
 	public String getCoursenumber() {
 		return coursenumber;
@@ -94,46 +85,51 @@ public class Courses {
 	public void setCredits(String credits) {
 		this.credits = credits;
 	}
-	public String getSemester() {
+	public String[] getSemester() {
 		return semester;
 	}
-	public void setSemester(String semester) {
+
+	public void setSemester(String[] semester) {
 		this.semester = semester;
 	}
-	public String getStartDate() {
-		return startDate;
+
+	public String[] getDates() {
+		return dates;
 	}
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
+
+	public void setDates(String[] dates) {
+		this.dates = dates;
 	}
-	public String getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-	}
-	public String getBuilding() {
+
+	public String[] getBuilding() {
 		return building;
 	}
-	public void setBuilding(String building) {
+
+	public void setBuilding(String[] building) {
 		this.building = building;
 	}
-	public String getRoom() {
+
+	public String[] getRoom() {
 		return room;
 	}
-	public void setRoom(String room) {
+
+	public void setRoom(String[] room) {
 		this.room = room;
 	}
-	public String getDay() {
+
+	public String[] getDay() {
 		return day;
 	}
-	public void setDay(String day) {
+
+	public void setDay(String[] day) {
 		this.day = day;
 	}
-	public String getTime() {
+
+	public String[] getTime() {
 		return time;
 	}
-	public void setTime(String time) {
+
+	public void setTime(String[] time) {
 		this.time = time;
 	}
 }
