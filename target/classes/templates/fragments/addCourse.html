@@ -63,10 +63,10 @@
                 	  			<span class="caret"></span>
                 	  			</button>
                 	  			<ul class="dropdown-menu">
-	  								<li><a href="#">M/W</a></li>
-  									<li><a href="#">T/Th</a></li>
-  									<li><a href="#">Fri</a></li>
-  								</ul>
+	                	  			<li><a href="#" th:each="day : ${days}"
+                	  								th:value="${day}"
+                	  								th:text="${day}"></a></li>
+                	  			</ul>
 							</div>
 							<div class="btn-group dropup">
                 	  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -74,14 +74,10 @@
                 	  			<span class="caret"></span>
                 	  			</button>
                 	  			<ul class="dropdown-menu">
-	  								<li><a href="#">8am</a></li>
-  									<li><a href="#">10pm</a></li>
-  									<li><a href="#">12pm</a></li>
-  									<li><a href="#">2pm</a></li>
-  									<li><a href="#">4pm</a></li>
-  									<li><a href="#">6pm</a></li>
-  									<li><a href="#">8pm</a></li>
-  								</ul>
+	                	  			<li><a href="#" th:each="time : ${times}"
+                	  								th:value="${time}"
+                	  								th:text="${time}"></a></li>
+                	  			</ul>
 							</div>
 							<div class="btn-group dropup">
                 	  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -89,30 +85,21 @@
                 	  			<span class="caret"></span>
                 	  			</button>
                 	  			<ul class="dropdown-menu">
-	  								<li><a href="#">Plaza</a></li>
-  									<li><a href="#">North</a></li>
-  									<li><a href="#">West</a></li>
-  									<li><a href="#">Science</a></li>
-  									<li><a href="#">Applied Manu.</a></li>
-  								</ul>
+	                	  			<li><a href="#" th:each="build : ${buildings}"
+                	  								th:value="${build}"
+                	  								th:text="${build}"></a></li>
+                	  			</ul>
 							</div>
 							<div class="btn-group dropup">
                 	  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                	  			Times
+                	  			Rooms
                 	  			<span class="caret"></span>
                 	  			</button>
                 	  			<ul class="dropdown-menu">
-	  								<li><a href="#">Rm 100</a></li>
-  									<li><a href="#">Rm 110</a></li>
-  									<li><a href="#">Rm 120</a></li>
-  									<li><a href="#">Rm 130</a></li>
-  									<li><a href="#">Rm 140</a></li>
-  									<li><a href="#">Rm 150</a></li>
-  									<li><a href="#">Rm 160</a></li>
-  									<li><a href="#">Rm 170</a></li>
-  									<li><a href="#">Rm 180</a></li>
-  									<li><a href="#">Rm 190</a></li>
-  								</ul>
+	                	  			<li><a href="#" th:each="room : ${rooms}"
+                	  								th:value="${room}"
+                	  								th:text="${room}"></a></li>
+                	  			</ul>
 							</div>
 							<br /> <br />
                 	  <button type="submit" class="btn btn-success">Submit</button>
