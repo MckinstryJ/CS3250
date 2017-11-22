@@ -9,8 +9,7 @@ import edu.msudenver.cs.team_four.models.*;
 public class CoursesTest {
 	
 	static Courses courseTester = new Courses("Bork" , "Bork Bork", "Meep","Mana manah", "Doop dee a doop doop"
-												,"Doop doo da doo", "Miss Piggy", "Kermit", "a", "b", "c", "d"
-												,"e", "f","g");
+												,"Doop doo da doo", "Miss Piggy", "Kermit");
 	
 	@Test
 	public void constructorTest() {
@@ -67,43 +66,39 @@ public class CoursesTest {
 	
 	@Test
 	public void setCourseSemester() {
-		courseTester.setSemester("Spring");
-		assertEquals("Spring", courseTester.getSemester());
+		String[] semester = {"Spring","Spring","Spring"};
+		courseTester.setSemester(semester);
+		assertEquals("Spring", courseTester.getSemester()[0]);
 	}
-	
 	@Test
-	public void setCourseStartDate() {
-		courseTester.setStartDate("Spring");
-		assertEquals("Spring", courseTester.getStartDate());
+	public void setCourseDates() {
+		String[] dates = {"15","23","21"};
+		courseTester.setDates(dates);
+		assertEquals("23", courseTester.getDates()[1]);
 	}
-	
-	@Test
-	public void setCourseEndDate() {
-		courseTester.setEndDate("Spring");
-		assertEquals("Spring", courseTester.getEndDate());
-	}
-	
 	@Test
 	public void setCourseBuilding() {
-		courseTester.setBuilding("Spring");
-		assertEquals("Spring", courseTester.getBuilding());
+		String[] buildings = {"North","South","East"};
+		courseTester.setBuilding(buildings);
+		assertEquals("East", courseTester.getBuilding()[2]);
 	}
-	
 	@Test
 	public void setCourseRoom() {
-		courseTester.setRoom("Spring");
-		assertEquals("Spring", courseTester.getRoom());
+		String[] rooms = {"101","102","103"};
+		courseTester.setRoom(rooms);
+		assertEquals("101", courseTester.getRoom()[0]);
 	}
-	
 	@Test
 	public void setCourseDay() {
-		courseTester.setDay("Spring");
-		assertEquals("Spring", courseTester.getDay());
+		String[] days = {"M", "T", "F"};
+		courseTester.setDay(days);
+		assertEquals("F", courseTester.getDay()[2]);
 	}
-	
 	@Test
 	public void setCourseTime() {
-		courseTester.setTime("Spring");
-		assertEquals("Spring", courseTester.getTime());
+		String[] times = {"8","10","12"};
+		courseTester.setTime(times);
+		assertEquals("10", courseTester.getTime()[1]);
 	}
 }
+

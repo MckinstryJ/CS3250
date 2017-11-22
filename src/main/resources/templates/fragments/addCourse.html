@@ -57,43 +57,51 @@
                 	      <input type="text" th:field="*{credits}" class="form-control"
                 	          placeholder="Enter Course Credit"/>
                 	  </div>
-               		  <div class="form-group">
-               		   <label class="control-label">Day of Class</label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">M/W</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">T/Th</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">Fri</input></label>
-               		  </div>
-               		  <div class="form-group">
-               		   <label class="control-label">Time of Class</label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">8am</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">10am</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">12pm</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">2pm</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">4pm</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">6pm</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">8pm</input></label>
-               		  </div> 
-               		  <div class="form-group">
-               		   <label class="control-label">Building of Class</label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">Plaza</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">North</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">West</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">Science</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">App Man</input></label>
-               		  </div> 
-               		  <div class="form-group">
-               		   <label class="control-label">Room of Class</label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">Rm 100</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">Rm 101</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">Rm 102</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">Rm 103</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">Rm 104</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">Rm 105</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">Rm 106</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">Rm 107</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">Rm 108</input></label>
-               		   <label class="radio-inline"><input type="radio" name="optradio">Rm 109</input></label>
-               		  </div>                  
+               		  <div class="btn-group dropup">
+                	  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                	  			Days
+                	  			<span class="caret"></span>
+                	  			</button>
+                	  			<ul class="dropdown-menu">
+	                	  			<li><a href="#" th:each="day : ${days}"
+                	  								th:value="${day}"
+                	  								th:text="${day}"></a></li>
+                	  			</ul>
+							</div>
+							<div class="btn-group dropup">
+                	  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                	  			Times
+                	  			<span class="caret"></span>
+                	  			</button>
+                	  			<ul class="dropdown-menu">
+	                	  			<li><a href="#" th:each="time : ${times}"
+                	  								th:value="${time}"
+                	  								th:text="${time}"></a></li>
+                	  			</ul>
+							</div>
+							<div class="btn-group dropup">
+                	  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                	  			Buildings
+                	  			<span class="caret"></span>
+                	  			</button>
+                	  			<ul class="dropdown-menu">
+	                	  			<li><a href="#" th:each="build : ${buildings}"
+                	  								th:value="${build}"
+                	  								th:text="${build}"></a></li>
+                	  			</ul>
+							</div>
+							<div class="btn-group dropup">
+                	  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                	  			Rooms
+                	  			<span class="caret"></span>
+                	  			</button>
+                	  			<ul class="dropdown-menu">
+	                	  			<li><a href="#" th:each="room : ${rooms}"
+                	  								th:value="${room}"
+                	  								th:text="${room}"></a></li>
+                	  			</ul>
+							</div>
+							<br /> <br />
                 	  <button type="submit" class="btn btn-success">Submit</button>
                		  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 	</form>
