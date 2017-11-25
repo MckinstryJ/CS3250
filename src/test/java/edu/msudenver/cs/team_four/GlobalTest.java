@@ -9,6 +9,12 @@ import edu.msudenver.cs.team_four.models.Global;
 public class GlobalTest {
 
 	@Test
+	public void getGlobal() {
+		Global g = new Global();
+		assertEquals("Metropolitan State University", g.schoolName);
+	}
+	
+	@Test
 	public void allLevelTest() {
 		Global g = new Global();
 		assertEquals("Freshman", g.creditHours(12));
