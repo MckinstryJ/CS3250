@@ -13,6 +13,7 @@ public class CourseController {
 	@Autowired
 	private CourseService courService;
 	private Courses co;
+	private CourseView courseView = new CourseView();
 
 	@RequestMapping(value="/courses", method=RequestMethod.POST)
 	public String courseSubmit(Courses course, Model model)
@@ -21,10 +22,11 @@ public class CourseController {
 		model.addAttribute("courses", courService.getAllCourses());
 		co = new Courses();
 		model.addAttribute("course", co);
-		model.addAttribute("days", co.getDay());
-		model.addAttribute("times", co.getTime());
-		model.addAttribute("buildings", co.getBuilding());
-		model.addAttribute("rooms", co.getRoom());
+		model.addAttribute("days", courseView.getDay());
+		model.addAttribute("times", courseView.getTime());
+		model.addAttribute("buildings", courseView.getBuilding());
+		model.addAttribute("rooms", courseView.getRoom());
+		//Once selected remove from courseView
 		return "courses";
 	}
 	
@@ -33,10 +35,10 @@ public class CourseController {
 		model.addAttribute("courses", courService.getAllCourses());
 		co = new Courses();
 		model.addAttribute("course", co);
-		model.addAttribute("days", co.getDay());
-		model.addAttribute("times", co.getTime());
-		model.addAttribute("buildings", co.getBuilding());
-		model.addAttribute("rooms", co.getRoom());
+		model.addAttribute("days", courseView.getDay());
+		model.addAttribute("times", courseView.getTime());
+		model.addAttribute("buildings", courseView.getBuilding());
+		model.addAttribute("rooms", courseView.getRoom());
 		return "courses";
 	}
 	
@@ -45,11 +47,12 @@ public class CourseController {
 		courService.deleteCourse(id);
 		co = new Courses();
 		model.addAttribute("course", co);
-		model.addAttribute("days", co.getDay());
-		model.addAttribute("times", co.getTime());
-		model.addAttribute("buildings", co.getBuilding());
-		model.addAttribute("rooms", co.getRoom());
+		model.addAttribute("days", courseView.getDay());
+		model.addAttribute("times", courseView.getTime());
+		model.addAttribute("buildings", courseView.getBuilding());
+		model.addAttribute("rooms", courseView.getRoom());
 		model.addAttribute("courses", courService.getAllCourses());
+		//Once deleted add back variables to courseView (in original order)
 		return "courses";
 	}
 	
@@ -58,10 +61,10 @@ public class CourseController {
 		courService.updateCourse(course);
 		co = new Courses();
 		model.addAttribute("course", co);
-		model.addAttribute("days", co.getDay());
-		model.addAttribute("times", co.getTime());
-		model.addAttribute("buildings", co.getBuilding());
-		model.addAttribute("rooms", co.getRoom());
+		model.addAttribute("days", courseView.getDay());
+		model.addAttribute("times", courseView.getTime());
+		model.addAttribute("buildings", courseView.getBuilding());
+		model.addAttribute("rooms", courseView.getRoom());
 		model.addAttribute("courses", courService.getAllCourses());
 		return "courses";
 	}
